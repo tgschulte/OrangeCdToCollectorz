@@ -11,7 +11,7 @@ namespace OrangeCdToCollectorz
 {
   [Serializable, XmlRoot(ElementName = "Collection")]
   [XmlType("Collection")]
-  public class OrangeCd
+  public sealed class OrangeCd
   {
     [XmlRoot(ElementName = "Artists")]
     public class Artists

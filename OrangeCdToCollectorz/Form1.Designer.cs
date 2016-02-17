@@ -1,6 +1,6 @@
 ﻿namespace OrangeCdToCollectorz
 {
-  partial class Form1
+  internal partial class Form1
   {
     /// <summary>
     /// Required designer variable.
