@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Collection Version="1.0">
+	<Albums>
+		<All>
+			<Album ID="CACDFB69814A4B2D" Modified="5192EB05" Created="5192EB06" IsCompilation="1" Icon="6" Frames="318975" Time="1:10:53">
+				<Artists Various="1"/>
+				<Title>Hava Narghile Vol. 1</Title>
+				<Year>2001</Year>
+				<Genres>
+					<Genre>Folk, World, &amp; Country</Genre>
+					<Genre>Rock</Genre>
+				</Genres>
+				<Category>rock</Category>
+				<Format>CDR</Format>
+				<Comment></Comment>
+				<RefNo>V-00300</RefNo>
+				<ReleaseDate Encoded="65000000">2001</ReleaseDate>
+				<Label>Bacchus Archives</Label>
+				<CatalogNo>BA1162</CatalogNo>
+				<Country>US</Country>
+				<Location>Rock: 60s-70s Anth</Location>
+				<Musicians>
+					<Credit>
+						<Name>Suzy Splab</Name>
+						<Role>Artwork</Role>
+					</Credit>
+					<Credit>
+						<Name>Gökhan Aya</Name>
+						<Role>Compilation Producer</Role>
+					</Credit>
+					<Credit>
+						<Name>Jay Dobis</Name>
+						<Role>Compilation Producer</Role>
+					</Credit>
+				</Musicians>
+				<Volumes>
+					<Volume ID="EFA30400" Frames="318975" Time="1:10:53">
+						<Tracks>
+							<Track Number="01" Frames="10125" Time="2:15">
+								<Artist>Silûetler</Artist>
+								<Title>Lorke Lorke</Title>
+							</Track>
+							<Track Number="02" Frames="12150" Time="2:42">
+								<Artist>Kaygisizlar</Artist>
+								<Title>Sasirdim (Short Circuit)</Title>
+							</Track>
+							<Track Number="03" Frames="11250" Time="2:30">
+								<Artist>Mavi Isiklar</Artist>
+								<Title>Iyi Düsün Tasin (For Your Information)</Title>
+							</Track>
+							<Track Number="04" Frames="10800" Time="2:24">
+								<Artist>Haramiler</Artist>
+								<Title>Çamlica Yolunda</Title>
+							</Track>
+							<Track Number="05" Frames="18000" Time="4:00">
+								<Artist>Yabancilar</Artist>
+								<Title>Agit</Title>
+							</Track>
+							<Track Number="06" Frames="15375" Time="3:25">
+								<Artist>Apaslar</Artist>
+								<Title>Gilgamis</Title>
+							</Track>
+							<Track Number="07" Frames="11175" Time="2:29">
+								<Artist>Les Mogol</Artist>
+								<Title>Hard Work</Title>
+							</Track>
+							<Track Number="08" Frames="18300" Time="4:04">
+								<Artist>Erkin Koray</Artist>
+								<Title>Anma Arkadas</Title>
+							</Track>
+							<Track Number="09" Frames="12600" Time="2:48">
+								<Artist>Baris Manço &amp; Kaygisizlar</Artist>
+								<Title>Flower Of Love</Title>
+							</Track>
+							<Track Number="10" Frames="14850" Time="3:18">
+								<Artist>Erkut Taçkin &amp; Okan Dincer &amp; Kontrastlar</Artist>
+								<Title>Mühür Gözlüm</Title>
+							</Track>
+							<Track Number="11" Frames="22950" Time="5:06">
+								<Artist>Çagrisim</Artist>
+								<Title>Divane Gönlüm</Title>
+							</Track>
+							<Track Number="12" Frames="13875" Time="3:05">
+								<Artist>Baris Manço &amp; Kaygisizlar</Artist>
+								<Title>Trip (Fairground)</Title>
+							</Track>
+							<Track Number="13" Frames="16800" Time="3:44">
+								<Artist>Les Mogol</Artist>
+								<Title>Berkay Oyun Havasi</Title>
+							</Track>
+							<Track Number="14" Frames="13800" Time="3:04">
+								<Artist>Bunalim</Artist>
+								<Title>Basak Saçlim</Title>
+							</Track>
+							<Track Number="15" Frames="16500" Time="3:40">
+								<Artist>Üç Hürel</Artist>
+								<Title>...Ve Olüm</Title>
+							</Track>
+							<Track Number="16" Frames="17550" Time="3:54">
+								<Artist>Erkin Koray &amp; Ter</Artist>
+								<Title>Hor Görme Garibi</Title>
+							</Track>
+							<Track Number="17" Frames="15900" Time="3:32">
+								<Artist>Baris Manço</Artist>
+								<Title>Ben Bilirim</Title>
+							</Track>
+							<Track Number="18" Frames="12375" Time="2:45">
+								<Artist>Koray Oktay</Artist>
+								<Title>Vefasiz Dost</Title>
+							</Track>
+							<Track Number="19" Frames="13350" Time="2:58">
+								<Artist>Ersen</Artist>
+								<Title>Sor Kendine</Title>
+							</Track>
+							<Track Number="20" Frames="10425" Time="2:19">
+								<Artist>Melih Faruk Serdar Saygun</Artist>
+								<Title>Gurbet Acisi</Title>
+							</Track>
+							<Track Number="21" Frames="19800" Time="4:24">
+								<Artist>Erkin Koray</Artist>
+								<Title>Saskin</Title>
+							</Track>
+							<Track Number="22" Frames="11025" Time="2:27">
+								<Artist>Gökçen Kaynatan</Artist>
+								<Title>Pencerenin Perdesini</Title>
+							</Track>
+						</Tracks>
+					</Volume>
+				</Volumes>
+			</Album>
+			<Album ID="504B700C9EEAF33B" Modified="4B80B794" Created="4B80B794" Icon="1" Frames="128775" Time="28:37">
+				<Artists>
+					<Artist>The Minds</Artist>
+				</Artists>
+				<Title>Plastic Girls</Title>
+				<Year>2003</Year>
+				<Genres></Genres>
+				<Category>rock</Category>
+				<Format>CD</Format>
+				<RefNo>T-0340</RefNo>
+				<ReleaseDate Encoded="67000000">2003</ReleaseDate>
+				<Location>Rock: Indie Male vox, hard</Location>
+				<Volumes>
+					<Volume ID="75BB4B00" Frames="128775" Time="28:37">
+						<Tracks>
+							<Track Number="01" Frames="12610" Time="2:48">
+								<Title>Hot</Title>
+							</Track>
+							<Track Number="02" Frames="12087" Time="2:41">
+								<Title>Lost In A Crowd</Title>
+							</Track>
+							<Track Number="03" Frames="13833" Time="3:04">
+								<Title>Night Drive</Title>
+							</Track>
+							<Track Number="04" Frames="7997" Time="1:46">
+								<Title>Forbidden Friend</Title>
+							</Track>
+							<Track Number="05" Frames="10633" Time="2:21">
+								<Title>Don't Touch</Title>
+							</Track>
+							<Track Number="06" Frames="9605" Time="2:08">
+								<Title>Plastic Girls</Title>
+							</Track>
+							<Track Number="07" Frames="12040" Time="2:40">
+								<Title>Smash Smash Smash!</Title>
+							</Track>
+							<Track Number="08" Frames="9937" Time="2:12">
+								<Title>Nerves</Title>
+							</Track>
+							<Track Number="09" Frames="7120" Time="1:34">
+								<Title>Sensation</Title>
+							</Track>
+							<Track Number="10" Frames="10733" Time="2:23">
+								<Title>Open The Door</Title>
+							</Track>
+							<Track Number="11" Frames="12072" Time="2:40">
+								<Title>My Place (Adverts)</Title>
+							</Track>
+							<Track Number="12" Frames="10108" Time="2:14">
+								<Title>Sex Vamp</Title>
+							</Track>
+						</Tracks>
+					</Volume>
+				</Volumes>
+			</Album>
+			<Album ID="B8B277E9F95B046C" Modified="5493669E" Created="5493669E" Frames="77400" Time="17:12">
+				<Artists>
+					<Artist>The Mommyheads</Artist>
+				</Artists>
+				<Title>Finest Specimens</Title>
+				<Year>2010</Year>
+				<Genres>
+					<Genre>Indie Rock</Genre>
+				</Genres>
+				<Format>MP3</Format>
+				<RefNo>?-03116</RefNo>
+				<ReleaseDate Encoded="6E000000">2010</ReleaseDate>
+				<Path>Z:\Shared Music\M\Mommyheads, The\Finest Specimens</Path>
+				<Volumes>
+					<Volume ID="EE10976C" Frames="77400" Time="17:12">
+						<Tracks>
+							<Track Number="01" Frames="9150" Time="2:02" Bitrate="128">
+								<Title>Gravity</Title>
+								<Comment></Comment>
+								<File Size="2050645">10 Gravity.mp3</File>
+							</Track>
+							<Track Number="02" Frames="11700" Time="2:36" Bitrate="128">
+								<Title>Wedding Day</Title>
+								<Comment></Comment>
+								<File Size="2894517">15 I Started Breathing.mp3</File>
+							</Track>
+							<Track Number="07">
+								<Title>You're Not A Dream</Title>
+								<File Size="2713957">16 You're Not A Dream.mp3</File>
+							</Track>
+						</Tracks>
+					</Volume>
+				</Volumes>
+			</Album>
+			<Album ID="97792B52B1BCEE7F" Modified="54F257BA" Created="54F257BA" Frames="161325" Time="35:51">
+				<Artists>
+					<Artist>Chris Gantry</Artist>
+				</Artists>
+				<Title>Motormouth</Title>
+				<Year>1970</Year>
+				<Genres></Genres>
+				<Format>MP3</Format>
+				<RefNo>?-10331</RefNo>
+				<ReleaseDate Encoded="46000000">1970</ReleaseDate>
+				<Path>Z:\Shared Music\C\Chris Gantry\Chris Gantry - Motormouth (1970).folder\Chris Gantry - Motormouth (1970)</Path>
+				<Volumes>
+					<Volume ID="FB30386F" Frames="161325" Time="35:51">
+						<Tracks>
+							<Track Number="01" Frames="17325" Time="3:51" Bitrate="-228">
+								<Title>soup duck</Title>
+								<File Size="6581363">01 soup duck.mp3</File>
+							</Track>
+							<Track Number="02" Frames="16425" Time="3:39" Bitrate="-218">
+								<Title>ear</Title>
+								<File Size="5993665">02 ear.mp3</File>
+							</Track>
+							<Track Number="03" Frames="19050" Time="4:14" Bitrate="-224">
+								<Title>nashville jack magic</Title>
+								<File Size="7105538">03 nashville jack magic.mp3</File>
+							</Track>
+							<Track Number="04" Frames="15600" Time="3:28" Bitrate="-197">
+								<Title>allegheny</Title>
+								<File Size="5143144">04 allegheny.mp3</File>
+							</Track>
+							<Track Number="05" Frames="17025" Time="3:47" Bitrate="-242">
+								<Title>pentagon bye gone</Title>
+								<File Size="6897682">05 pentagon bye gone.mp3</File>
+							</Track>
+							<Track Number="06" Frames="21750" Time="4:50" Bitrate="-229">
+								<Title>the patent leather boogie man</Title>
+								<File Size="8300922">06 the patent leather boogie man.mp3</File>
+							</Track>
+							<Track Number="07" Frames="14250" Time="3:10" Bitrate="-211">
+								<Title>down</Title>
+								<File Size="5016127">07 down.mp3</File>
+							</Track>
+							<Track Number="08" Frames="14250" Time="3:10" Bitrate="-235">
+								<Title>bone</Title>
+								<File Size="5573137">08 bone.mp3</File>
+							</Track>
+							<Track Number="09" Frames="12750" Time="2:50" Bitrate="-220">
+								<Title>family</Title>
+								<File Size="4672569">09 family.mp3</File>
+							</Track>
+							<Track Number="10" Frames="12900" Time="2:52" Bitrate="-236">
+								<Title>flashlight</Title>
+								<File Size="5086853">10 flashlight.mp3</File>
+							</Track>
+						</Tracks>
+					</Volume>
+				</Volumes>
+			</Album>
+
+		</All>
+	</Albums>
+	<Artists Modified="5185B3B0">
+		<Artist>
+			<Name>Béla Bartók</Name>
+			<SortName>Bela Bartok</SortName>
+		</Artist>
+		<Artist>
+			<Name>Béla Fleck &amp; The Flecktones</Name>
+			<SortName>Bela Fleck &amp; The Flecktones</SortName>
+		</Artist>
+		<Artist>
+			<Name>Ceoltórí</Name>
+			<SortName>Ceoltori</SortName>
+		</Artist>
+		<Artist>
+			<Name>Die Doofen</Name>
+			<SortName>Doofen, Die</SortName>
+		</Artist>
+		<Artist>
+			<Name>Les Amis Creole</Name>
+			<SortName>Amis Creole, Les</SortName>
+		</Artist>
+		<Artist>
+			<Name>Los Activos</Name>
+			<SortName>Activos, Los</SortName>
+		</Artist>
+		<Artist>
+			<Name>Los Dug Dug's</Name>
+			<SortName>Dug Dug's, Los</SortName>
+		</Artist>
+		<Artist>
+			<Name>Los Peyotes</Name>
+			<SortName>Peyotes, Los</SortName>
+		</Artist>
+		<Artist>
+			<Name>Méav</Name>
+			<SortName>Meav</SortName>
+		</Artist>
+		<Artist>
+			<Name>Th' Legendary Shack Shakers</Name>
+			<SortName>Legendary Shack Shakers</SortName>
+		</Artist>
+	</Artists>
+	<Formats Modified="4B4BF36D">
+		<Format>CD</Format>
+		<Format>CDR</Format>
+		<Format>2CD</Format>
+		<Format>CD+DVD</Format>
+		<Format>3&quot; CD</Format>
+		<Format>5&quot; CD</Format>
+		<Format>CD box set</Format>
+		<Format>DVD</Format>
+		<Format>MP3</Format>
+		<Format>FLAC</Format>
+		<Format>SHN</Format>
+		<Format>OGG</Format>
+		<Format>WAV</Format>
+		<Format>LP</Format>
+		<Format>LP box set</Format>
+		<Format>EP</Format>
+		<Format>7&quot; vinyl</Format>
+		<Format>10&quot; vinyl</Format>
+		<Format>12&quot; vinyl</Format>
+		<Format>MD</Format>
+		<Format>CA</Format>
+		<Format>Tape</Format>
+		<Format>VHS</Format>
+		<Format>LD</Format>
+	</Formats>
+	<Categories Modified="00000000">
+		<Category>blues</Category>
+		<Category>classical</Category>
+		<Category>country</Category>
+		<Category>data</Category>
+		<Category>folk</Category>
+		<Category>jazz</Category>
+		<Category>misc</Category>
+		<Category>newage</Category>
+		<Category>reggae</Category>
+		<Category>rock</Category>
+		<Category>soundtrack</Category>
+	</Categories>
+	<Genres Modified="4B513A8A">
+		<Genre>A Cappella</Genre>
+		<Genre>Acid</Genre>
+		<Genre>Acid Jazz</Genre>
+		<Genre>Acid Punk</Genre>
+		<Genre>Acoustic</Genre>
+		<Genre>Alt.Rock</Genre>
+		<Genre>Alternative</Genre>
+		<Genre>Ambient</Genre>
+		<Genre>Anime</Genre>
+		<Genre>Avantgarde</Genre>
+		<Genre>Ballad</Genre>
+		<Genre>Bass</Genre>
+		<Genre>Beat</Genre>
+		<Genre>Bebob</Genre>
+		<Genre>Big Band</Genre>
+		<Genre>Black Metal</Genre>
+		<Genre>Bluegrass</Genre>
+		<Genre>Blues</Genre>
+		<Genre>Booty Bass</Genre>
+		<Genre>BritPop</Genre>
+		<Genre>Cabaret</Genre>
+		<Genre>Celtic</Genre>
+		<Genre>Chamber Music</Genre>
+		<Genre>Chanson</Genre>
+		<Genre>Chorus</Genre>
+		<Genre>Christian Gangsta Rap</Genre>
+		<Genre>Christian Rap</Genre>
+		<Genre>Christian Rock</Genre>
+		<Genre>Classic Rock</Genre>
+		<Genre>Classical</Genre>
+		<Genre>Club</Genre>
+		<Genre>Club-House</Genre>
+		<Genre>Comedy</Genre>
+		<Genre>Contemporary Christian</Genre>
+		<Genre>Country</Genre>
+		<Genre>Crossover</Genre>
+		<Genre>Cult</Genre>
+		<Genre>Dance</Genre>
+		<Genre>Dance Hall</Genre>
+		<Genre>Darkwave</Genre>
+		<Genre>Data</Genre>
+		<Genre>Death Metal</Genre>
+		<Genre>Disco</Genre>
+		<Genre>Dream</Genre>
+		<Genre>Drum &amp; Bass</Genre>
+		<Genre>Drum Solo</Genre>
+		<Genre>Duet</Genre>
+		<Genre>Easy Listening</Genre>
+		<Genre>Electronic</Genre>
+		<Genre>Ethnic</Genre>
+		<Genre>Euro-House</Genre>
+		<Genre>Euro-Techno</Genre>
+		<Genre>Eurodance</Genre>
+		<Genre>Fast-Fusion</Genre>
+		<Genre>Folk</Genre>
+		<Genre>Folk/Rock</Genre>
+		<Genre>Folklore</Genre>
+		<Genre>Freestyle</Genre>
+		<Genre>Funk</Genre>
+		<Genre>Fusion</Genre>
+		<Genre>Game</Genre>
+		<Genre>Gangsta Rap</Genre>
+		<Genre>Goa</Genre>
+		<Genre>Gospel</Genre>
+		<Genre>Gothic</Genre>
+		<Genre>Gothic Rock</Genre>
+		<Genre>Grunge</Genre>
+		<Genre>Hard Rock</Genre>
+		<Genre>Hardcore</Genre>
+		<Genre>Heavy Metal</Genre>
+		<Genre>Hip-Hop</Genre>
+		<Genre>House</Genre>
+		<Genre>Humour</Genre>
+		<Genre>Indie</Genre>
+		<Genre>Industrial</Genre>
+		<Genre>Instrumental</Genre>
+		<Genre>Instrumental Pop</Genre>
+		<Genre>Instrumental Rock</Genre>
+		<Genre>Jazz</Genre>
+		<Genre>Jazz+Funk</Genre>
+		<Genre>JPop</Genre>
+		<Genre>Jungle</Genre>
+		<Genre>Latin</Genre>
+		<Genre>Lo-Fi</Genre>
+		<Genre>Meditative</Genre>
+		<Genre>Merengue</Genre>
+		<Genre>Metal</Genre>
+		<Genre>Musical </Genre>
+		<Genre>National Folk</Genre>
+		<Genre>Native American</Genre>
+		<Genre>Negerpunk</Genre>
+		<Genre>New Age</Genre>
+		<Genre>New Wave</Genre>
+		<Genre>Noise</Genre>
+		<Genre>Oldies</Genre>
+		<Genre>Opera</Genre>
+		<Genre>Other</Genre>
+		<Genre>Polka</Genre>
+		<Genre>Polsk Punk</Genre>
+		<Genre>Pop</Genre>
+		<Genre>Pop-Folk</Genre>
+		<Genre>Pop/Funk</Genre>
+		<Genre>Porn Groove</Genre>
+		<Genre>Power Ballad</Genre>
+		<Genre>Pranks</Genre>
+		<Genre>Primus</Genre>
+		<Genre>Progressive Rock</Genre>
+		<Genre>Psychedelic</Genre>
+		<Genre>Psychedelic Rock</Genre>
+		<Genre>Punk</Genre>
+		<Genre>Punk Rock</Genre>
+		<Genre>R&amp;B</Genre>
+		<Genre>Rap</Genre>
+		<Genre>Rave</Genre>
+		<Genre>Reggae</Genre>
+		<Genre>Retro</Genre>
+		<Genre>Revival</Genre>
+		<Genre>Rhythmic Soul</Genre>
+		<Genre>Rock</Genre>
+		<Genre>Rock &amp; Roll</Genre>
+		<Genre>Salsa</Genre>
+		<Genre>Samba</Genre>
+		<Genre>Satire</Genre>
+		<Genre>Showtunes</Genre>
+		<Genre>Ska</Genre>
+		<Genre>Slow Jam</Genre>
+		<Genre>Slow Rock</Genre>
+		<Genre>Sonata</Genre>
+		<Genre>Soul</Genre>
+		<Genre>Sound Clip</Genre>
+		<Genre>Soundtrack</Genre>
+		<Genre>Southern Rock</Genre>
+		<Genre>Space</Genre>
+		<Genre>Speech</Genre>
+		<Genre>Swing</Genre>
+		<Genre>Symphonic Rock</Genre>
+		<Genre>Symphony</Genre>
+		<Genre>Synthpop</Genre>
+		<Genre>Tango</Genre>
+		<Genre>Techno</Genre>
+		<Genre>Techno-Industrial</Genre>
+		<Genre>Terror</Genre>
+		<Genre>Thrash Metal</Genre>
+		<Genre>Top 40</Genre>
+		<Genre>Trailer</Genre>
+		<Genre>Trance</Genre>
+		<Genre>Tribal</Genre>
+		<Genre>Trip-Hop</Genre>
+		<Genre>Vocal</Genre>
+		<Genre>Xmas</Genre>
+	</Genres>
+	<Statuses Modified="00000000">
+		<Status>Borrowed</Status>
+		<Status>Heard</Status>
+		<Status>Loaned</Status>
+		<Status>Lost</Status>
+		<Status>Ordered</Status>
+		<Status>Owned</Status>
+		<Status>Sold</Status>
+		<Status>Want</Status>
+	</Statuses>
+	<Locations Modified="556FB027">
+		<Location>Jazz: Experimental</Location>
+		<Location>Avant-Garde: Violin</Location>
+		<Location>Bluegrass/Old Timey: Instrumental</Location>
+		<Location>Bluegrass/Old Timey: Vox</Location>
+		<Location>Bluegrass: Alt.</Location>
+		<Location>Bluegrass: Anthology</Location>
+		<Location>Blues/Soul/R&amp;B: Alt</Location>
+		<Location>Blues: Acoustic/Delta/Country</Location>
+		<Location>Blues: Alt</Location>
+		<Location>Blues: Anthology</Location>
+		<Location>Blues: Chicago</Location>
+		<Location>Blues: Electric</Location>
+		<Location>Blues: Female Vox</Location>
+		<Location>Blues: Guitar</Location>
+		<Location>Blues: Harmonica</Location>
+		<Location>Blues: Male Vox</Location>
+		<Location>Blues: Piano</Location>
+		<Location>Blues: Texas</Location>
+		<Location>Country/Americana</Location>
+		<Location>Country: Alt</Location>
+		<Location>Country: Alt Hard</Location>
+		<Location>Country: Anthology</Location>
+		<Location>Country: Post-</Location>
+		<Location>Country: Rock</Location>
+		<Location>Country: Steel Guitar</Location>
+		<Location>Country: Western Swing</Location>
+		<Location>Detroit</Location>
+		<Location>Disco</Location>
+		<Location>EBM/Dance/Electro-Pop</Location>
+		<Location>Electro-pop/Synth-pop</Location>
+		<Location>Electronica</Location>
+		<Location>Electronica: Anthology</Location>
+		<Location>Ethnic: Africa</Location>
+		<Location>Ethnic: Africa Anthology</Location>
+		<Location>Ethnic: Algeria</Location>
+		<Location>Ethnic: American Indian</Location>
+		<Location>Ethnic: Andean</Location>
+		<Location>Ethnic: Anthology</Location>
+		<Location>Ethnic: Arabian</Location>
+		<Location>Ethnic: Argentina</Location>
+		<Location>Ethnic: Armenian</Location>
+		<Location>Ethnic: Australian</Location>
+		<Location>Ethnic: Austrian</Location>
+		<Location>Ethnic: Bahamian</Location>
+		<Location>Ethnic: Balkan</Location>
+		<Location>Ethnic: BeNeLux</Location>
+		<Location>Ethnic: Brazil</Location>
+		<Location>Ethnic: Cajun/Zydeco</Location>
+		<Location>Ethnic: Cajun/Zydeco Anth</Location>
+		<Location>Ethnic: Calypso</Location>
+		<Location>Ethnic: Cape Verde</Location>
+		<Location>Ethnic: Caribbean</Location>
+		<Location>Ethnic: Celtic</Location>
+		<Location>Ethnic: Celtic Anth.</Location>
+		<Location>Ethnic: Children's</Location>
+		<Location>Ethnic: China</Location>
+		<Location>Ethnic: Columbia</Location>
+		<Location>Ethnic: Cuba</Location>
+		<Location>Ethnic: Czech Republic</Location>
+		<Location>Ethnic: Denmark</Location>
+		<Location>Ethnic: Didjeridoo</Location>
+		<Location>Ethnic: Dominican</Location>
+		<Location>Ethnic: Eastern Europe</Location>
+		<Location>Ethnic: Egypt</Location>
+		<Location>Ethnic: Electronic</Location>
+		<Location>Ethnic: Ethnoid</Location>
+		<Location>Ethnic: Finland</Location>
+		<Location>Ethnic: Flamenco</Location>
+		<Location>Ethnic: Folk American</Location>
+		<Location>Ethnic: Folk English</Location>
+		<Location>Ethnic: France</Location>
+		<Location>Ethnic: Georgia</Location>
+		<Location>Ethnic: Germany</Location>
+		<Location>Ethnic: Greece</Location>
+		<Location>Ethnic: Guatemala</Location>
+		<Location>Ethnic: Gypsy</Location>
+		<Location>Ethnic: Haiti</Location>
+		<Location>Ethnic: Hawaii</Location>
+		<Location>Ethnic: Hungary</Location>
+		<Location>Ethnic: Iceland</Location>
+		<Location>Ethnic: India-Pakistan</Location>
+		<Location>Ethnic: Indonesia/Java</Location>
+		<Location>Ethnic: Iran</Location>
+		<Location>Ethnic: Ireland</Location>
+		<Location>Ethnic: Islam</Location>
+		<Location>Ethnic: Israel/Jewish</Location>
+		<Location>Ethnic: Italy</Location>
+		<Location>Ethnic: Japan</Location>
+		<Location>Ethnic: Klezmer</Location>
+		<Location>Ethnic: Latin Rock</Location>
+		<Location>Ethnic: Macedonian</Location>
+		<Location>Ethnic: Madagascar</Location>
+		<Location>Ethnic: Mali</Location>
+		<Location>Ethnic: Mexican-American</Location>
+		<Location>Ethnic: Mexico</Location>
+		<Location>Ethnic: Middle East</Location>
+		<Location>Ethnic: Mozambique</Location>
+		<Location>Ethnic: Nepal</Location>
+		<Location>Ethnic: Netherlands</Location>
+		<Location>Ethnic: New Orleans</Location>
+		<Location>Ethnic: Nigeria</Location>
+		<Location>Ethnic: Norway-Nordic</Location>
+		<Location>Ethnic: Palestine</Location>
+		<Location>Ethnic: Panama</Location>
+		<Location>Ethnic: Percussion</Location>
+		<Location>Ethnic: Peru</Location>
+		<Location>Ethnic: Poland</Location>
+		<Location>Ethnic: Portugal</Location>
+		<Location>Ethnic: Puerto Rico</Location>
+		<Location>Ethnic: Qawwali</Location>
+		<Location>Ethnic: Reggae/Lovers R.</Location>
+		<Location>Ethnic: Russia</Location>
+		<Location>Ethnic: Scotland</Location>
+		<Location>Ethnic: Scotland</Location>
+		<Location>Ethnic: Senegal</Location>
+		<Location>Ethnic: Ska</Location>
+		<Location>Ethnic: Ska Anthology</Location>
+		<Location>Ethnic: South Africa</Location>
+		<Location>Ethnic: South America</Location>
+		<Location>Ethnic: Spain</Location>
+		<Location>Ethnic: Sweden</Location>
+		<Location>Ethnic: Syria</Location>
+		<Location>Ethnic: Tango</Location>
+		<Location>Ethnic: Tejano/Tex-Mex</Location>
+		<Location>Ethnic: Thailand</Location>
+		<Location>Ethnic: Tibet</Location>
+		<Location>Ethnic: Turkey</Location>
+		<Location>Ethnic: Tuva</Location>
+		<Location>Ethnic: Ukrainian</Location>
+		<Location>Ethnic: Venezuela</Location>
+		<Location>Ethnic: Vietnam</Location>
+		<Location>Ethnic: Worldbeat/Dub</Location>
+		<Location>Ethnic: Zimbabwe</Location>
+		<Location>Fiddle</Location>
+		<Location>Folk: Alt.</Location>
+		<Location>Folk: Bawdy Alt.</Location>
+		<Location>Folk: Bawdy/Risque</Location>
+		<Location>Folk: Neo-</Location>
+		<Location>Folk: Vintage</Location>
+		<Location>Garage, Neo CDs</Location>
+		<Location>Garage, Vintage CDs</Location>
+		<Location>Gospel/Spirituals</Location>
+		<Location>Industrial</Location>
+		<Location>Jazz: Female vox</Location>
+		<Location>Jazz: Fusion</Location>
+		<Location>Jazz: Guitar</Location>
+		<Location>Jazz: Male vox</Location>
+		<Location>Krautrock</Location>
+		<Location>Misc./Non-Classifiable</Location>
+		<Location>Motown</Location>
+		<Location>Pop: 20s-40s</Location>
+		<Location>Post-Electro Rock</Location>
+		<Location>Psych. Revival</Location>
+		<Location>Rap/Hip-Hop/Turntablism</Location>
+		<Location>Rock: 40s-50s</Location>
+		<Location>Rock: 50s-60s</Location>
+		<Location>Rock: 60s-70s</Location>
+		<Location>Rock: 60s-70s Anth</Location>
+		<Location>Rock: 60s-70s Pink Floyd</Location>
+		<Location>Rock: 60s-70s, Captain Beefheart</Location>
+		<Location>Rock: 80s-90s</Location>
+		<Location>Rock: American Punk</Location>
+		<Location>Rock: European Punk</Location>
+		<Location>Rock: Indie Anthology</Location>
+		<Location>Rock: Indie Female vox, hard (riot grrrl)</Location>
+		<Location>Rock: Indie Female vox, pop</Location>
+		<Location>Rock: Indie Male vox, hard</Location>
+		<Location>Rock: Indie Male vox, pop</Location>
+		<Location>Rock: Indie Male vox, pop</Location>
+		<Location>Rock: Indie w/Mixed vox</Location>
+		<Location>Rock: Instro</Location>
+		<Location>Rock: Post-</Location>
+		<Location>Rock: Punk Anth.</Location>
+		<Location>Rockabilly, Alt CDs</Location>
+		<Location>Rockabilly, Neo CDs</Location>
+		<Location>Rockabilly, Vintage CDs</Location>
+		<Location>Samplers</Location>
+		<Location>Seasonal: Christmas</Location>
+		<Location>Seasonal: Halloween</Location>
+		<Location>Shoegazer</Location>
+		<Location>Singer-Songwriter: Female, Acoustic</Location>
+		<Location>Singer-Songwriter: Female, Electric</Location>
+		<Location>Singer-Songwriter: Male, Acoustic</Location>
+		<Location>Soul/R&amp;B/Funk</Location>
+		<Location>Soundtrack</Location>
+		<Location>Soundtrack: Anthology</Location>
+		<Location>Soundtrack: Composer</Location>
+		<Location>Trip Hop</Location>
+		<Location>Vocal Stylist, Female</Location>
+		<Location>Zappa &amp; Related</Location>
+	</Locations>
+	<Sources Modified="00000000">
+		<Source>AM Radio</Source>
+		<Source>Audience</Source>
+		<Source>Bootleg</Source>
+		<Source>FM Radio</Source>
+		<Source>Internet Radio</Source>
+		<Source>Official</Source>
+		<Source>Soundtrack</Source>
+		<Source>TV</Source>
+	</Sources>
+	<Generations Modified="00000000">
+		<Generation>1st Gen</Generation>
+		<Generation>2nd Gen</Generation>
+		<Generation>3rd Gen</Generation>
+		<Generation>4th Gen</Generation>
+		<Generation>&gt;4th Gen</Generation>
+		<Generation>Unknown</Generation>
+	</Generations>
+	<Qualities Modified="00000000">
+		<Quality>Excellent</Quality>
+		<Quality>Good</Quality>
+		<Quality>Listenable</Quality>
+	</Qualities>
+	<Conditions Modified="00000000">
+		<Condition>Acceptable</Condition>
+		<Condition>Good</Condition>
+		<Condition>Excellent</Condition>
+		<Condition>Mint</Condition>
+		<Condition>Sealed</Condition>
+	</Conditions>
+	<Packagings Modified="00000000">
+		<Packaging>CD case</Packaging>
+		<Packaging>Slim CD case</Packaging>
+		<Packaging>Super CD case</Packaging>
+		<Packaging>Double CD case</Packaging>
+		<Packaging>DVD case</Packaging>
+		<Packaging>Digipak</Packaging>
+		<Packaging>Sleeve</Packaging>
+	</Packagings>
+</Collection>
