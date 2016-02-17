@@ -333,10 +333,10 @@ namespace OrangeCdToCollectorz
 	</Packagings>
 </Collection>";
 
-      XmlSerializer serializer = new XmlSerializer(typeof(OrangeCd));
+      XmlSerializer serializer = new XmlSerializer(typeof(OrangeCd.Collection));
       using (TextReader reader = new StringReader(testData))
       {
-        OrangeCd orangeCd = (OrangeCd)serializer.Deserialize(reader);
+        OrangeCd.Collection orangeCd = (OrangeCd.Collection)serializer.Deserialize(reader);
       }
 
       // Show the dialog and get result.
@@ -346,27 +346,30 @@ namespace OrangeCdToCollectorz
         string file = openFileDialog1.FileName;
         try
         {
-          var ser = new XmlSerializer(typeof(OrangeCd));
+          var ser = new XmlSerializer(typeof(OrangeCd.Collection));
           using (var reader = XmlReader.Create(file))
           {
-            var wrapper = (OrangeCd)ser.Deserialize(reader);
+            var wrapper = (OrangeCd.Collection)ser.Deserialize(reader);
             XmlDocument _Doc = new XmlDocument();
             _Doc.Load(file);
 
-            XmlSerializer deserializer = new XmlSerializer(typeof(OrangeCd));
+            XmlSerializer deserializer = new XmlSerializer(typeof(OrangeCd.Collection));
             using (TextReader textReader = new StringReader(_Doc.OuterXml))
             {
-              OrangeCd XmlData = (OrangeCd)deserializer.Deserialize(textReader);
+              OrangeCd.Collection XmlData = (OrangeCd.Collection)deserializer.Deserialize(textReader);
             }
 
+            ser = new XmlSerializer(typeof(OrangeCd.Collection));
+            wrapper = (OrangeCd.Collection)ser.Deserialize(new StringReader(_Doc.OuterXml));
 
-            ser = new XmlSerializer(typeof(OrangeCd));
-            wrapper = (OrangeCd)ser.Deserialize(new StringReader(_Doc.OuterXml));
 
-            _Doc = new XmlDocument();
-            _Doc.Load(file);
-            ser = new XmlSerializer(typeof(OrangeCd));
-            wrapper = (OrangeCd)ser.Deserialize(new XmlNodeReader(_Doc.DocumentElement));
+            //ser = new XmlSerializer(typeof(OrangeCd.Collection));
+            //wrapper = (OrangeCd.Collection)ser.Deserialize(new StringReader(_Doc.OuterXml));
+
+            //_Doc = new XmlDocument();
+            //_Doc.Load(file);
+            //ser = new XmlSerializer(typeof(OrangeCd.Collection));
+            //wrapper = (OrangeCd.Collection)ser.Deserialize(new XmlNodeReader(_Doc.DocumentElement));
           }
         }
         catch (IOException ioException)
