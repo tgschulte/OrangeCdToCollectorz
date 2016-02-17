@@ -1,0 +1,12 @@
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\bin\Debug\OrangeCdToCollectorz.exe.config
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\bin\Debug\OrangeCdToCollectorz.exe
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\bin\Debug\OrangeCdToCollectorz.pdb
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.csprojResolveAssemblyReference.cache
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.Form1.resources
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.Properties.Resources.resources
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.csproj.GenerateResource.Cache
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.exe
+c:\users\tsch\documents\visual studio 2012\Projects\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.pdb
+C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\bin\Debug\OrangeCdToCollectorz.exe.config
+C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.exe
+C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.pdb
