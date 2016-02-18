@@ -82,8 +82,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="SampleXmlFiles\coolectorz.xml" />
-    <Content Include="SampleXmlFiles\coolectorzImport.xml" />
+    <Content Include="SampleXmlFiles\collectorzImport.xml" />
     <Content Include="SampleXmlFiles\sampleOCD.txt" />
     <Content Include="SampleXmlFiles\sampleOCD.xml" />
     <Content Include="SampleXmlFiles\sampleOrangeCd.xml" />
