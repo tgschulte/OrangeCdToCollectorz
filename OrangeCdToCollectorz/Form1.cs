@@ -45,51 +45,48 @@ namespace OrangeCdToCollectorz
             if ((album.Format == "CD") || (album.Format == "CDR") || (album.Format == "LP"))
             {
               richTextBox1.Text += "Importing from OrangeCd.Collection " + album.Format + " " + album.Title + Environment.NewLine;
-              CollectorzMusic.Music music = new CollectorzMusic.Music();
-
-
-              foreach(OrangeCd.Artist orangeCdAlbumArtist in album.Artists.Artist)
-              {
-                if(album.Artists.Artist.Contains(orangeCdAlbumArtist ))
-                {
-                OrangeCd.Artist orangeCdAlbumFoundArtist=album.Artists.Artist.Find(t => t.Name = orangeCdAlbumArtist.Name);
-                music.Artistfirstletter.Displayname = orangeCdAlbumFoundArtist.Name.Substring(0, 1);
-                music.Artistfirstletter.Sortname = orangeCdAlbumFoundArtist.SortName.Substring(0, 1);
-                }
-
-              }
 
               CollectorzMusic.Artists cArtists = new CollectorzMusic.Artists();
               int index = 0;
 
               if (album.Artists.Various == "1")
               {
+                CollectorzMusic.Music music = new CollectorzMusic.Music();
                 CollectorzMusic.Artist collectorzArtist = new CollectorzMusic.Artist();
                 collectorzArtist.Displayname = "Various Artists";
                 collectorzArtist.Sortname = "Various Artists";
 
-                // todo: looks like class is not a proper collection here
                 cArtists.Artist = collectorzArtist;
-
+                music.Artists = cArtists;
+                musiclist.Music.Add(music);
               }
               else
               {
-                foreach (OrangeCd.Artist orangeCdartist in album.Artists.Artist)
-                {
-                  CollectorzMusic.Artist collectorzArtist = new CollectorzMusic.Artist();
-                  collectorzArtist.Displayname = orangeCdartist.Name;
-                  collectorzArtist.Sortname = orangeCdartist.SortName;
+                CollectorzMusic.Music music = new CollectorzMusic.Music();
 
-                  // todo: looks like class is not a proper collection here
-                  cArtists.Artist = collectorzArtist;
-                  //cArtists[index++] = collectorzArtist;
+                foreach (OrangeCd.Artist orangeCdAlbumArtist in album.Artists.Artist)
+                {
+                  // todo: We are not finding the artist in the deserialized obect, for instance: Album ID="504B700C9EEAF33B" 
+                  music.Artistfirstletter.Displayname = orangeCdAlbumArtist.Name.Substring(0, 1);
+                  
+                  // default this property, in case we don't find something better in the OrangeCD Artists collection
+                  music.Artistfirstletter.Sortname = orangeCdAlbumArtist.Name.Substring(0, 1);
+
+                  if (album.Artists.Artist.Contains(orangeCdAlbumArtist))
+                  {
+                    OrangeCd.Artist orangeCdAlbumFoundArtist = album.Artists.Artist.Find(t => t.Name == orangeCdAlbumArtist.Name);
+
+                    if (orangeCdAlbumFoundArtist.SortName != null)
+                    {
+                      music.Artistfirstletter.Sortname = orangeCdAlbumFoundArtist.SortName.Substring(0, 1);
+                    }
+                  }
+
                 }
 
-                music.Artists = cArtists;
-
+                musiclist.Music.Add(music);
               }
 
-              musiclist.Music.Add(music);
             }
             else
             {
