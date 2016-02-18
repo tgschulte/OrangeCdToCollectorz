@@ -85,7 +85,9 @@
     <Content Include="SampleXmlFiles\collectorzImport.xml" />
     <Content Include="SampleXmlFiles\sampleOCD.txt" />
     <Content Include="SampleXmlFiles\sampleOCD.xml" />
-    <Content Include="SampleXmlFiles\sampleOrangeCd.xml" />
+    <Content Include="SampleXmlFiles\sampleOrangeCd.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="SampleXmlFiles\sampleOrangeCdnoCData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
