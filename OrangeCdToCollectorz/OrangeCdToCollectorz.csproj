@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="SampleXmlFiles\CATraxx_OneAlbum.xml" />
     <Content Include="SampleXmlFiles\collectorzImport.xml" />
     <Content Include="SampleXmlFiles\sampleOCD.txt" />
     <Content Include="SampleXmlFiles\sampleOCD.xml" />
