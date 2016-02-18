@@ -66,7 +66,7 @@ namespace OrangeCdToCollectorz
 
                 foreach (OrangeCd.Artist orangeCdAlbumArtist in album.Artists.Artist)
                 {
-                  // todo: We are not finding the artist in the deserialized obect, for instance: Album ID="504B700C9EEAF33B" 
+                  // todo: We are not finding the artist in the deserialized object, for instance: Album ID="504B700C9EEAF33B" 
                   music.Artistfirstletter.Displayname = orangeCdAlbumArtist.Name.Substring(0, 1);
                   
                   // default this property, in case we don't find something better in the OrangeCD Artists collection
