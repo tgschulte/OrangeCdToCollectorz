@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data date="05-Dec-13" longdate="Thursday, December 5, 2013" unformatteddate="20131205" time="5:47:37 PM" timeshort="5:47 PM" computername="BLACKBOX-RONALD" username="ronald" database="C:\Users\Public\Documents\CATraxx\Database\onealbum.mdb" explorerwidth="0" exploreheight="0" guest="No" dataserver="No" audioplayer="No">
+	<record table="album" id="1">
+		<albumdata audioattached="True" audiofolder="D:\test\Music Test Files\Alien Ant Farm - Anthology\Alien Ant &amp; Farm - Anthology\" discogsid="" asin="" asinsite="http://www.amazon.com/s/ref=nb_ss_gw/?url=search-alias%3Dmusic&amp;field-keywords=Album%20Artist%201%20%26%20Album%20Artist%202+Album%20Title&amp;tag=ca0cc-20">
+			<albumid unformatted="1">1</albumid>
+			<marked bool="True">Yes</marked>
+			<lastmodified year="2013" month="12" day="05" long="Thursday, December 5, 2013" unformatted="20131205" time="5:43:23 PM" shorttime="5:43 PM">05-12-2013</lastmodified>
+			<title>Album Title</title>
+			<titlesort>Album Title</titlesort>
+			<artists formattedname="Album Artist 1 &amp; Album Artist 2" sort="Album Artist 1Album Artist 2">
+				<artist id="19">
+					<name>Album Artist 1</name>
+					<sortby>Album Artist 1</sortby>
+					<country id="-1"/>
+				</artist>
+				<artist id="20">
+					<name>Album Artist 2</name>
+					<sortby>Album Artist 2</sortby>
+					<country id="-1"/>
+				</artist>
+			</artists>
+			<artistrelations/>
+			<format id="3">LP</format>
+			<released year="2013" month="11" day="12" long="Tuesday, November 12, 2013" unformatted="20131112">12-11-2013</released>
+			<referenceno>00001</referenceno>
+			<company id="1">Album Company</company>
+			<label id="1">Album Label</label>
+			<distributor id="1">Album Distributor</distributor>
+			<catalognumber>Album Cat Nr</catalognumber>
+			<country id="12">Album Country</country>
+			<reissue bool="False">No</reissue>
+			<originalpressing bool="False">No</originalpressing>
+			<conditioncover id="-1"/>
+			<conditionrecord id="2">M</conditionrecord>
+			<packaging id="5">Album Packaging</packaging>
+			<tapetype id="5">Album Tape Type</tapetype>
+			<spars id="5">DDD</spars>
+			<status id="2">For sale</status>
+			<genrelist>
+				<genre id="273">Album Genre 2</genre>
+				<genre id="272">Album Genre 1</genre>
+			</genrelist>
+			<primarygenre id="273">Album Genre 2</primarygenre>
+			<playingtime minutes="12" seconds="29">12:29</playingtime>
+			<compilation bool="False">No</compilation>
+			<promo bool="True">Yes</promo>
+			<price integer="12" fraction="99" unformatted="12.99">12.99</price>
+			<value integer="10" fraction="56" unformatted="10.56">10.56</value>
+			<sellingprice integer="4" fraction="35" unformatted="4.35">4.35</sellingprice>
+			<dateacquired year="2013" month="11" day="17" long="Sunday, November 17, 2013" unformatted="20131117">17-11-2013</dateacquired>
+			<acquiredfrom id="1">Album Acquired</acquiredfrom>
+			<personalrating id="9" image="*PR:Album,PersonalRating,9">4</personalrating>
+			<location id="12">Album Location</location>
+			<owner id="1">Album Owner</owner>
+			<registered year="2013" month="12" day="05" long="Thursday, December 5, 2013" unformatted="20131205">05-12-2013</registered>
+			<lastplayed year="" month="" day="" long="" unformatted="" time="" shorttime=""/>
+			<playcount unformatted="0">0</playcount>
+			<dayssinceplayed unformatted="-1">-1</dayssinceplayed>
+			<notes>Album notes</notes>
+			<reviews/>
+			<live bool="True">Yes</live>
+			<gatefoldcover bool="False">No</gatefoldcover>
+			<appraiser id="-1"/>
+			<vinylcolor id="7">Vinyl Color</vinylcolor>
+			<picturedisc bool="True">Yes</picturedisc>
+			<insurance id="-1"/>
+			<numberoftracks unformatted="1">1</numberoftracks>
+			<awards/>
+			<nominations/>
+			<newalbum bool="True">Yes</newalbum>
+			<onloan bool="True">Yes</onloan>
+			<overdue bool="False">No</overdue>
+			<borrower id="1">Album Borrower</borrower>
+			<borrowercategory id="-1"/>
+			<dateborrowed year="2013" month="12" day="05" long="Thursday, December 5, 2013" unformatted="20131205">05-12-2013</dateborrowed>
+			<datedue year="2013" month="12" day="12" long="Thursday, December 12, 2013" unformatted="20131212">12-12-2013</datedue>
+			<reserved bool="False">No</reserved>
+			<reservedto id="-1"/>
+			<reserveddate year="" month="" day="" long="" unformatted=""/>
+			<custom01>Album Custom Text 1</custom01>
+			<custom02>Album Custom Text 2</custom02>
+			<custom03>Album Custom Text 3</custom03>
+			<custom04/>
+			<custom05 id="1">Album Custom Lookup 1</custom05>
+			<custom06 id="1">Album Custom Lookup 2</custom06>
+			<custom07 id="1">Album Custom Lookup 3</custom07>
+			<custom08 id="-1"/>
+			<custom09 integer="0" fraction="0" unformatted="0.0">0</custom09>
+			<custom10 integer="0" fraction="0" unformatted="0.0">0</custom10>
+			<custom11 integer="0" fraction="0" unformatted="0.0">0</custom11>
+			<custom12 bool="False">No</custom12>
+			<custom13 bool="False">No</custom13>
+			<custom14 bool="False">No</custom14>
+			<custom15 bool="False">No</custom15>
+			<custom16 bool="False">No</custom16>
+			<custom17 bool="False">No</custom17>
+			<custom18/>
+			<custom19/>
+			<custom20 id="-1"/>
+			<custom21 id="-1"/>
+			<custom22 year="" month="" day="" long="" unformatted=""/>
+			<custom23 year="" month="" day="" long="" unformatted=""/>
+			<custom24 bool="False">No</custom24>
+			<custom25 bool="False">No</custom25>
+			<custom26 bool="False">No</custom26>
+			<custom27 bool="False">No</custom27>
+			<custom28 bool="False">No</custom28>
+			<custom29 bool="False">No</custom29>
+			<custom30 bool="False">No</custom30>
+			<custom31 bool="False">No</custom31>
+			<custom32 bool="False">No</custom32>
+			<custom33 bool="False">No</custom33>
+			<changeinvalue>-2.43</changeinvalue>
+			<changeinvaluepr>-18.71</changeinvaluepr>
+			<albumbandmembers>
+				<albumbandmember id="8">
+					<name>Track Guitarist</name>
+					<sortby>Guitarist, Track</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="4">Guitar</instrument>
+					</instruments>
+				</albumbandmember>
+				<albumbandmember id="9">
+					<name>Track Vocals</name>
+					<sortby>Vocals, Track</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="3">Vocals</instrument>
+					</instruments>
+				</albumbandmember>
+				<albumbandmember id="10">
+					<name>Track Drums</name>
+					<sortby>Drums, Track</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="13">Drums</instrument>
+					</instruments>
+				</albumbandmember>
+				<albumbandmember id="17">
+					<name>Album Drums</name>
+					<sortby>Drums, Album</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="13">Drums</instrument>
+					</instruments>
+				</albumbandmember>
+			</albumbandmembers>
+			<albumguestmusicians>
+				<albumguestmusician id="11">
+					<name>Track Guest Bass</name>
+					<sortby>Bass, Track Guest</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="1">Bass Guitar</instrument>
+					</instruments>
+				</albumguestmusician>
+				<albumguestmusician id="12">
+					<name>Track Guest Vocals</name>
+					<sortby>Vocals, Track Guest</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="3">Vocals</instrument>
+					</instruments>
+				</albumguestmusician>
+				<albumguestmusician id="18">
+					<name>Album Guest Vocals</name>
+					<sortby>Vocals, Album Guest</sortby>
+					<country id="-1"/>
+					<instruments>
+						<instrument id="3">Vocals</instrument>
+					</instruments>
+				</albumguestmusician>
+			</albumguestmusicians>
+			<image1 virtual="No" prev="-1" next="2">
+				<filename>D:\Projects\CollectorzWin\Bin\Music\Catraxx\Images\Album\Album Artist 1 &amp; Album Artist 2 - Album Title.jpg</filename>
+				<type>2</type>
+				<notes/>
+			</image1>
+			<image2 virtual="No" prev="1" next="3">
+				<filename>D:\Projects\CollectorzWin\Bin\Music\Catraxx\Images\Album\Album Artist 1 &amp; Album Artist 2 - Album Title_2.jpg</filename>
+				<type>2</type>
+				<notes/>
+			</image2>
+			<image3 virtual="No" prev="2" next="-1">
+				<filename>D:\Projects\CollectorzWin\Bin\Music\Catraxx\Images\Album\Album Artist 1 &amp; Album Artist 2 - Album Title_3.jpg</filename>
+				<type>2</type>
+				<notes/>
+			</image3>
+			<image4 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image4>
+			<image5 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image5>
+			<image6 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image6>
+			<image7 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image7>
+			<image8 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image8>
+			<image9 virtual="No" prev="-1" next="-1">
+				<filename/>
+				<type/>
+				<notes/>
+			</image9>
+			<enhancedcd bool="False">No</enhancedcd>
+			<bootleg bool="False">No</bootleg>
+			<soundtrack bool="False">No</soundtrack>
+			<hdcd bool="False">No</hdcd>
+			<weblinks>
+				<weblink>
+					<title>Album Web URL 1</title>
+					<url>http://collectorz.com</url>
+					<type>Web Url</type>
+				</weblink>
+			</weblinks>
+			<filelinks>
+				<filelink>
+					<title>File Link 1</title>
+					<filename>D:\Ronald\Pics\headphones.jpg</filename>
+					<type>Image</type>
+				</filelink>
+			</filelinks>
+			<barcode>album barcode</barcode>
+			<reissuedate year="2013" month="12" day="04" long="Wednesday, December 4, 2013" unformatted="20131204">04-12-2013</reissuedate>
+			<remastered bool="False">No</remastered>
+			<keywords>
+				<keyword id="1">Keyword 1</keyword>
+				<keyword id="2">Keyword 2</keyword>
+				<keyword id="3">Keyword 3</keyword>
+			</keywords>
+			<disclabel>Album Disc Label</disclabel>
+			<albumauthorcredits>
+				<albumauthorcredit id="4">
+					<name>Track Songwriter</name>
+					<sortby>Songwriter, Track</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="8">Songwriter</role>
+					</roles>
+				</albumauthorcredit>
+				<albumauthorcredit id="5">
+					<name>Track Composer</name>
+					<sortby>Composer, Track</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="2">Composer</role>
+					</roles>
+				</albumauthorcredit>
+				<albumauthorcredit id="13">
+					<name>Album Composer</name>
+					<sortby>Composer, Album</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="2">Composer</role>
+					</roles>
+				</albumauthorcredit>
+				<albumauthorcredit id="14">
+					<name>Album Songwriter</name>
+					<sortby>Songwriter, Album</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="8">Songwriter</role>
+					</roles>
+				</albumauthorcredit>
+			</albumauthorcredits>
+			<albumconductorcredits>
+				<albumconductorcredit id="15">
+					<name>Album Conductor</name>
+					<sortby>Conductor, Album</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="2">Conductor</role>
+					</roles>
+				</albumconductorcredit>
+			</albumconductorcredits>
+			<albumproductioncredits>
+				<albumproductioncredit id="6">
+					<name>Track Producer</name>
+					<sortby>Producer, Track</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="8">Producer</role>
+					</roles>
+				</albumproductioncredit>
+				<albumproductioncredit id="7">
+					<name>Track Engineer</name>
+					<sortby>Engineer, Track</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="4">Engineer</role>
+					</roles>
+				</albumproductioncredit>
+				<albumproductioncredit id="16">
+					<name>Album Producer</name>
+					<sortby>Producer, Album</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="8">Producer</role>
+					</roles>
+				</albumproductioncredit>
+			</albumproductioncredits>
+			<albumstudiocredits>
+				<albumstudiocredit id="2">
+					<name>Album Studio</name>
+					<sortby>Album Studio</sortby>
+					<roles>
+						<role id="3">Recording Location</role>
+					</roles>
+				</albumstudiocredit>
+			</albumstudiocredits>
+			<albumcredits>
+				<albumcredit id="1">
+					<name>Album Credit 1</name>
+					<sortby>1, Album Credit</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="8">Role 1</role>
+					</roles>
+				</albumcredit>
+				<albumcredit id="2">
+					<name>Album Credit 2</name>
+					<sortby>2, Album Credit</sortby>
+					<country id="-1"/>
+					<roles>
+						<role id="9">Role 2</role>
+					</roles>
+				</albumcredit>
+			</albumcredits>
+			<boxset boxsetid="1" audioattached="True">Album Box Set</boxset>
+			<boxsetindex unformatted="1">1</boxsetindex>
+			<chartinfolist/>
+		</albumdata>
+		<trackdata disccount="1" sides="2">
+			<disc audioattached="True">
+				<discno>1</discno>
+				<title>Album Title</title>
+				<playingtime minutes="12" seconds="29">12:29</playingtime>
+				<toc/>
+				<cddbdownload bool="False">No</cddbdownload>
+				<cddbsubmit bool="False">No</cddbsubmit>
+				<msdiscid>0</msdiscid>
+				<side>
+					<sideno>A</sideno>
+					<title>Side A</title>
+					<playingtime minutes="12" seconds="29">12:29</playingtime>
+					<track id="1" playlist="False">
+						<trackid unformatted="1">1</trackid>
+						<marked bool="True">Yes</marked>
+						<lastmodified year="2013" month="12" day="05" long="Thursday, December 5, 2013" unformatted="20131205" time="5:43:55 PM" shorttime="5:43 PM">05-12-2013</lastmodified>
+						<blank bool="False">No</blank>
+						<discno unformatted="1">1</discno>
+						<side>A</side>
+						<index unformatted="1">1</index>
+						<title>Track 1</title>
+						<fulltitle>Track 1 [Live]</fulltitle>
+						<titlesort>Track 1</titlesort>
+						<artists formattedname="Track Artist 1 &amp; Track Artist 2" sort="Track Artist 1Track Artist 2">
+							<artist id="21">
+								<name>Track Artist 1</name>
+								<sortby>Track Artist 1</sortby>
+								<country id="-1"/>
+							</artist>
+							<artist id="22">
+								<name>Track Artist 2</name>
+								<sortby>Track Artist 2</sortby>
+								<country id="-1"/>
+							</artist>
+						</artists>
+						<artistrelations/>
+						<originalby id="3">Track Original Artist</originalby>
+						<length minutes="12" seconds="29">12:29</length>
+						<version/>
+						<recordedstart year="2013" month="12" day="04" long="Wednesday, December 4, 2013" unformatted="20131204">04-12-2013</recordedstart>
+						<recordedend year="2013" month="12" day="06" long="Friday, December 6, 2013" unformatted="20131206">06-12-2013</recordedend>
+						<released year="2013" month="12" day="03" long="Tuesday, December 3, 2013" unformatted="20131203">03-12-2013</released>
+						<yearwritten/>
+						<yearcopyright/>
+						<sound id="2">Stereo</sound>
+						<instrumental bool="False">No</instrumental>
+						<bpm unformatted="130">130</bpm>
+						<bonus bool="False">No</bonus>
+						<demo bool="False">No</demo>
+						<live bool="True">Yes</live>
+						<tour id="1">Track Tour</tour>
+						<venue id="1">Track Venue</venue>
+						<lastplayed year="" month="" day="" long="" unformatted="" time="" shorttime=""/>
+						<playcount unformatted="0">0</playcount>
+						<dayssinceplayed unformatted="-1">-1</dayssinceplayed>
+						<genrelist>
+							<genre id="273">Album Genre 2</genre>
+							<genre id="272">Album Genre 1</genre>
+						</genrelist>
+						<notes>Track notes</notes>
+						<lyrics>Track lyrics</lyrics>
+						<reviews/>
+						<custom01/>
+						<custom02/>
+						<custom03/>
+						<custom04 id="-1"/>
+						<custom05 id="-1"/>
+						<custom06 id="-1"/>
+						<custom07 integer="0" fraction="0" unformatted="0.0">0</custom07>
+						<custom08 integer="0" fraction="0" unformatted="0.0">0</custom08>
+						<custom09 integer="0" fraction="0" unformatted="0.0">0</custom09>
+						<custom10 bool="False">No</custom10>
+						<custom11 bool="False">No</custom11>
+						<custom12 bool="False">No</custom12>
+						<custom13 bool="False">No</custom13>
+						<custom14 bool="False">No</custom14>
+						<custom15 bool="False">No</custom15>
+						<custom16/>
+						<custom17/>
+						<custom18 id="-1"/>
+						<custom19 id="-1"/>
+						<custom20 bool="False">No</custom20>
+						<custom21 bool="False">No</custom21>
+						<custom22 bool="False">No</custom22>
+						<custom23 bool="False">No</custom23>
+						<custom24 bool="False">No</custom24>
+						<custom25 bool="False">No</custom25>
+						<custom26 bool="False">No</custom26>
+						<custom27 bool="False">No</custom27>
+						<custom28 bool="False">No</custom28>
+						<custom29 bool="False">No</custom29>
+						<custom30 year="" month="" day="" long="" unformatted=""/>
+						<custom31 year="" month="" day="" long="" unformatted=""/>
+						<audiosample>
+							<filename>D:\test\Music Test Files\Alien Ant Farm - Anthology\Alien Ant &amp; Farm - Anthology\01 - Courage.mp3</filename>
+							<type>1</type>
+							<bitrate>195</bitrate>
+						</audiosample>
+						<videosample>
+							<filename/>
+							<type>0</type>
+						</videosample>
+						<authorcredits>
+							<authorcredit id="4">
+								<name>Track Songwriter</name>
+								<sortby>Songwriter, Track</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="8">Songwriter</role>
+								</roles>
+							</authorcredit>
+							<authorcredit id="5">
+								<name>Track Composer</name>
+								<sortby>Composer, Track</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="2">Composer</role>
+								</roles>
+							</authorcredit>
+							<authorcredit id="13">
+								<name>Album Composer</name>
+								<sortby>Composer, Album</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="2">Composer</role>
+								</roles>
+							</authorcredit>
+							<authorcredit id="14">
+								<name>Album Songwriter</name>
+								<sortby>Songwriter, Album</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="8">Songwriter</role>
+								</roles>
+							</authorcredit>
+						</authorcredits>
+						<conductorcredits>
+							<conductorcredit id="15">
+								<name>Album Conductor</name>
+								<sortby>Conductor, Album</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="2">Conductor</role>
+								</roles>
+							</conductorcredit>
+						</conductorcredits>
+						<productioncredits>
+							<productioncredit id="6">
+								<name>Track Producer</name>
+								<sortby>Producer, Track</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="8">Producer</role>
+								</roles>
+							</productioncredit>
+							<productioncredit id="7">
+								<name>Track Engineer</name>
+								<sortby>Engineer, Track</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="4">Engineer</role>
+								</roles>
+							</productioncredit>
+							<productioncredit id="16">
+								<name>Album Producer</name>
+								<sortby>Producer, Album</sortby>
+								<country id="-1"/>
+								<roles>
+									<role id="8">Producer</role>
+								</roles>
+							</productioncredit>
+						</productioncredits>
+						<studiocredits>
+							<studiocredit id="2">
+								<name>Album Studio</name>
+								<sortby>Album Studio</sortby>
+								<roles>
+									<role id="3">Recording Location</role>
+								</roles>
+							</studiocredit>
+						</studiocredits>
+						<bandmembers>
+							<bandmember id="8">
+								<name>Track Guitarist</name>
+								<sortby>Guitarist, Track</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="4">Guitar</instrument>
+								</instruments>
+							</bandmember>
+							<bandmember id="9">
+								<name>Track Vocals</name>
+								<sortby>Vocals, Track</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="3">Vocals</instrument>
+								</instruments>
+							</bandmember>
+							<bandmember id="10">
+								<name>Track Drums</name>
+								<sortby>Drums, Track</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="13">Drums</instrument>
+								</instruments>
+							</bandmember>
+							<bandmember id="17">
+								<name>Album Drums</name>
+								<sortby>Drums, Album</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="13">Drums</instrument>
+								</instruments>
+							</bandmember>
+						</bandmembers>
+						<guestmusicians>
+							<guestmusician id="11">
+								<name>Track Guest Bass</name>
+								<sortby>Bass, Track Guest</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="1">Bass Guitar</instrument>
+								</instruments>
+							</guestmusician>
+							<guestmusician id="12">
+								<name>Track Guest Vocals</name>
+								<sortby>Vocals, Track Guest</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="3">Vocals</instrument>
+								</instruments>
+							</guestmusician>
+							<guestmusician id="18">
+								<name>Album Guest Vocals</name>
+								<sortby>Vocals, Album Guest</sortby>
+								<country id="-1"/>
+								<instruments>
+									<instrument id="3">Vocals</instrument>
+								</instruments>
+							</guestmusician>
+						</guestmusicians>
+						<subtitles/>
+						<counterstart minutes="0" seconds="0">0:00:00</counterstart>
+						<counterstop minutes="0" seconds="0">0:00:00</counterstop>
+						<position>A1</position>
+						<hidden bool="False">No</hidden>
+						<personalrating id="8" image="*PR:Track,PersonalRating,8">3.5</personalrating>
+						<filelinks/>
+						<weblinks/>
+						<keywords/>
+						<audiobitrate unformatted="195">195</audiobitrate>
+						<tagread year="" month="" day="" long="" unformatted="" time="" shorttime=""/>
+						<tagwrite year="" month="" day="" long="" unformatted="" time="" shorttime=""/>
+						<chartinfolist/>
+					</track>
+				</side>
+			</disc>
+		</trackdata>
+	</record>
+</data>
