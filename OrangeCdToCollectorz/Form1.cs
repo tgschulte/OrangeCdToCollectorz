@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace OrangeCdToCollectorz
@@ -24,24 +26,27 @@ namespace OrangeCdToCollectorz
         string file = openFileDialog1.FileName;
         richTextBox1.Text = "Loading file " + file + Environment.NewLine;
 
-        OrangeCd.Collection orangeCdCollection;
         try
         {
-          var ser = new XmlSerializer(typeof(OrangeCd.Collection));
-          //using (MemoryStream memoryStream = new MemoryStream(new UnicodeEncoding().GetBytes(xmlText.Replace((char)0x1A, ' '))))
-          //using (XmlTextReader xsText = new XmlTextReader(memoryStream))
+          //using (StreamReader reader = StreamReader("my.xml", Encoding.UTF8, true))
           //{
-          //  xsText.Normalization = true;
-          //  return (T)xs.Deserialize(xsText);
+          //  XmlSerializer serializer = new XmlSerializer(typeof(OrangeCd.Collection));
+
+          //  object result = serializer.Deserialize(reader);
           //}
+          //OrangeCdToCollectorz.Collection col = new Collection();
 
+          var ser = new XmlSerializer(typeof(OrangeCdToCollectorz.Collection));
 
-          using (var reader = XmlReader.Create(file))
+          OrangeCdToCollectorz.Collection orangeCdCollection;
+          using (StreamReader reader = new StreamReader(file, Encoding.UTF8, true))
+          //using (var reader = XmlReader.Create(file))
           {
-            orangeCdCollection = (OrangeCd.Collection)ser.Deserialize(reader);
+            orangeCdCollection = (OrangeCdToCollectorz.Collection)ser.Deserialize(reader);
           }
 
-          richTextBox1.Text += "OrangeCd.Collection has " + orangeCdCollection.Albums.All.Album.Count.ToString() + " albums." + Environment.NewLine;
+          //richTextBox1.Text += "OrangeCd.Collection has " + orangeCdCollection.Albums.All.Album.Count.ToString() + " albums." + Environment.NewLine;
+          richTextBox1.Text += "OrangeCd.Collection has " + orangeCdCollection.Albums.All.Length.ToString() + " albums." + Environment.NewLine;
 
           CollectorzMusic.Musicinfo collectorzMusic = new CollectorzMusic.Musicinfo();
           collectorzMusic.Creationdate = DateTime.Now.ToString("M/dd/yyyy hh:mm:ss tt");
@@ -49,59 +54,142 @@ namespace OrangeCdToCollectorz
           CollectorzMusic.Musiclist musiclist = new CollectorzMusic.Musiclist();
           musiclist.Music = new List<CollectorzMusic.Music>();
 
-          foreach (OrangeCd.Album album in orangeCdCollection.Albums.All.Album)
+          foreach (CollectionAlbumsAlbum album in orangeCdCollection.Albums.All)
+          //foreach (OrangeCd.Album album in orangeCdCollection.Albums.All.Album)
           {
-            if ((album.Format == "CD") || (album.Format == "CDR") || (album.Format == "LP"))
+            string format = string.Empty;
+            CollectionAlbumsAlbumArtists collectionAlbumsAlbumArtists = new CollectionAlbumsAlbumArtists();
+
+            for (int i = 0; i < album.Items.Length; i++)
             {
-              richTextBox1.Text += "Importing from OrangeCd.Collection " + album.Format + " " + album.Title + Environment.NewLine;
-
-              CollectorzMusic.Artists cArtists = new CollectorzMusic.Artists();
-              int index = 0;
-
-              if (album.Artists.Various == "1")
+              switch (album.ItemsElementName[i])
               {
-                CollectorzMusic.Music music = new CollectorzMusic.Music();
-                CollectorzMusic.Artist collectorzArtist = new CollectorzMusic.Artist();
-                collectorzArtist.Displayname = "Various Artists";
-                collectorzArtist.Sortname = "Various Artists";
-
-                cArtists.Artist = collectorzArtist;
-                music.Artists = cArtists;
-                musiclist.Music.Add(music);
+                case ItemsChoiceType2.Format:
+                  format = album.Items[i].ToString();
+                  break;
+                case ItemsChoiceType2.ASIN:
+                  // skipping ASIN
+                  break;
+                case ItemsChoiceType2.Artists:
+                  // read artists
+                  collectionAlbumsAlbumArtists = (CollectionAlbumsAlbumArtists)album.Items[i];
+                  break;
+                default:
+                  richTextBox1.Text += "Error Importing from OrangeCd.Collection album " + album.ID + Environment.NewLine;
+                  break;
               }
-              else
+            }
+
+            if ((format == "CD") || (format == "CDR") || (format == "LP"))
               {
+                richTextBox1.Text += "Importing from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
                 CollectorzMusic.Music music = new CollectorzMusic.Music();
 
-                foreach (OrangeCd.Artist orangeCdAlbumArtist in album.Artists.Artist)
+                // format
+                CollectorzMusic.Format collectorzMusicFormat = new CollectorzMusic.Format();
+                collectorzMusicFormat.Displayname = format;
+                music.Format = collectorzMusicFormat;
+
+                // artists
+                music.Artists = new CollectorzMusic.Artists();
+                if (collectionAlbumsAlbumArtists.Various == 1)
                 {
-                  // todo: We are not finding the artist in the deserialized object, for instance: Album ID="504B700C9EEAF33B" 
-                  music.Artistfirstletter.Displayname = orangeCdAlbumArtist.Name.Substring(0, 1);
+                  CollectorzMusic.Artist  cArtist = new CollectorzMusic.Artist();
+                  cArtist.Displayname = "Various Artists";
+                  cArtist.Sortname = "Various Artists";
+                  music.Artists.Artist = cArtist;
+                }
+                else
+                {
+                  // look up sort name, display name
+                  music.Artists.Artist = new CollectorzMusic.Artist();
+                  string sortname = collectionAlbumsAlbumArtists.Artist;
+                  music.Artists.Artist.Displayname = sortname;
 
-                  // default this property, in case we don't find something better in the OrangeCD Artists collection
-                  music.Artistfirstletter.Sortname = orangeCdAlbumArtist.Name.Substring(0, 1);
+                  CollectionArtistsArtist collectionArtists = orangeCdCollection.Artists.Artist.FirstOrDefault(a => a.Name == sortname);
 
-                  if (album.Artists.Artist.Contains(orangeCdAlbumArtist))
+                  if (collectionArtists != null)
                   {
-                    OrangeCd.Artist orangeCdAlbumFoundArtist = album.Artists.Artist.Find(t => t.Name == orangeCdAlbumArtist.Name);
-
-                    if (orangeCdAlbumFoundArtist.SortName != null)
+                    if (collectionArtists.SortName!=null)
                     {
-                      music.Artistfirstletter.Sortname = orangeCdAlbumFoundArtist.SortName.Substring(0, 1);
+                      sortname = collectionArtists.SortName;
                     }
                   }
+
+                  music.Artists.Artist.Sortname = sortname;
 
                 }
 
                 musiclist.Music.Add(music);
               }
+              else
+              {
+                richTextBox1.Text += "Skipping Importing from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+              }
 
-            }
-            else
-            {
-              richTextBox1.Text += "Skipping Importing from OrangeCd.Collection " + album.Format + " " + album.Title + Environment.NewLine;
-            }
+              //if (myChoices.ChoiceArray[i] == MoreChoices.Item)
+              //  Console.WriteLine("Item: " + (string)myChoices.ManyChoices[i]);
+              //else if (myChoices.ChoiceArray[i] == MoreChoices.Amount)
+              //  Console.WriteLine("Amount: " + myChoices.ManyChoices[i].ToString());
+              //if (myChoices.ChoiceArray[i] == MoreChoices.Temp)
+              //  Console.WriteLine("Temp: " + (string)myChoices.ManyChoices[i].ToString());
+            //}
+
+
+            //album.Items[]
+            //if ((album.Format == "CD") || (album.Format == "CDR") || (album.Format == "LP"))
+            //{
+            //  richTextBox1.Text += "Importing from OrangeCd.Collection " + album.Format + " " + album.Title + Environment.NewLine;
+
+            //  CollectorzMusic.Artists cArtists = new CollectorzMusic.Artists();
+            //  int index = 0;
+            //  .
+            //  if (album.Artists.Various == "1")
+            //  {
+            //    CollectorzMusic.Music music = new CollectorzMusic.Music();
+            //    CollectorzMusic.Artist collectorzArtist = new CollectorzMusic.Artist();
+            //    collectorzArtist.Displayname = "Various Artists";
+            //    collectorzArtist.Sortname = "Various Artists";
+
+            //    cArtists.Artist = collectorzArtist;
+            //    music.Artists = cArtists;
+            //    musiclist.Music.Add(music);
+            //  }
+            //  else
+            //  {
+            //    CollectorzMusic.Music music = new CollectorzMusic.Music();
+
+            //    foreach (string orangeCdAlbumArtist in album.Artists)
+            //    {
+            //      string artist = orangeCdAlbumArtist.ToString();
+            //      // todo: We are not finding the artist in the deserialized object, for instance: Album ID="504B700C9EEAF33B" 
+            //      // music.Artistfirstletter.Displayname = orangeCdAlbumArtist.Name.Substring(0, 1);
+
+            //      // default this property, in case we don't find something better in the OrangeCD Artists collection
+            //      // music.Artistfirstletter.Sortname = orangeCdAlbumArtist.Name.Substring(0, 1);
+
+            //      //if (album.Artists.Artist.Contains(orangeCdAlbumArtist))
+            //      //{
+            //      //  OrangeCd.Artist orangeCdAlbumFoundArtist = album.Artists.Artist.Find(t => t.Name == orangeCdAlbumArtist.Name);
+
+            //      //  if (orangeCdAlbumFoundArtist.SortName != null)
+            //      //  {
+            //      //    music.Artistfirstletter.Sortname = orangeCdAlbumFoundArtist.SortName.Substring(0, 1);
+            //      //  }
+            //      //}
+            //    }
+
+            //    musiclist.Music.Add(music);
+            //  }
+
+            //}
+            //else
+            //{
+            //  richTextBox1.Text += "Skipping Importing from OrangeCd.Collection " + album.Format + " " + album.Title + Environment.NewLine;
+            //}
           }
+
+          collectorzMusic.Musiclist = musiclist;
 
           // write output to a file
           richTextBox1.Text += "Writing output." + Environment.NewLine;

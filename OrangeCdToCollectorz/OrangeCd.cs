@@ -19,7 +19,7 @@ namespace OrangeCdToCollectorz
       [XmlAttribute(AttributeName = "Various")]
       public string Various { get; set; }
       [XmlElement(ElementName = "Artist")]
-      public List<Artist> Artist { get; set; }
+      public string Artist { get; set; }
       [XmlAttribute(AttributeName = "Modified")]
       public string Modified { get; set; }
     }
@@ -271,7 +271,7 @@ namespace OrangeCdToCollectorz
     }
 
     [XmlRoot(ElementName = "Collection")]
-    public class Collection
+    public class Collection2
     {
       [XmlElement(ElementName = "Albums")]
       public Albums Albums { get; set; }
