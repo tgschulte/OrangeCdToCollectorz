@@ -12,6 +12,8 @@ namespace OrangeCdToCollectorz
 {
   internal partial class Form1 : Form
   {
+    string lastPoprerty = string.Empty;
+
     public Form1()
     {
       InitializeComponent();
@@ -47,6 +49,7 @@ namespace OrangeCdToCollectorz
 
           //richTextBox1.Text += "OrangeCd.Collection has " + orangeCdCollection.Albums.All.Album.Count.ToString() + " albums." + Environment.NewLine;
           richTextBox1.Text += "OrangeCd.Collection has " + orangeCdCollection.Albums.All.Length.ToString() + " albums." + Environment.NewLine;
+          int cnt = 0;
 
           CollectorzMusic.Musicinfo collectorzMusic = new CollectorzMusic.Musicinfo();
           collectorzMusic.Creationdate = DateTime.Now.ToString("M/dd/yyyy hh:mm:ss tt");
@@ -57,6 +60,7 @@ namespace OrangeCdToCollectorz
           foreach (CollectionAlbumsAlbum album in orangeCdCollection.Albums.All)
           //foreach (OrangeCd.Album album in orangeCdCollection.Albums.All.Album)
           {
+            cnt++;
             string format = string.Empty;
             string comment = string.Empty;
             string labelnumber = string.Empty;
@@ -76,22 +80,27 @@ namespace OrangeCdToCollectorz
                 case ItemsChoiceType2.Volumes:
                 // skipping 
                 case ItemsChoiceType2.Year:
+                  lastPoprerty = "Year";
                   if (releaseYear == 0)
                   {
                     // format is ushort 
-                    releaseYear = (ushort)album.Items[i];
+                    int.TryParse(album.Items[i].ToString(), out releaseYear);
+                    // releaseYear = (int)album.Items[i].ToString();
                   }
                   break;
                 case ItemsChoiceType2.UPC:
+                  lastPoprerty = "UPC";
                   upc = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Title:
+                  lastPoprerty = "Title";
                   title = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Status:
                   // skipping 
                   break;
                 case ItemsChoiceType2.ReleaseDate:
+                  lastPoprerty = "ReleaseDate";
                   CollectionAlbumsAlbumReleaseDate collectionAlbumsAlbumReleaseDate = (CollectionAlbumsAlbumReleaseDate)album.Items[i];
                   releaseDateStr = collectionAlbumsAlbumReleaseDate.Value;
 
@@ -123,12 +132,15 @@ namespace OrangeCdToCollectorz
                   // skipping 
                   break;
                 case ItemsChoiceType2.Location:
+                  lastPoprerty = "Location";
                   location = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Label:
+                  lastPoprerty = "Label";
                   label = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Genres:
+                  lastPoprerty = "Genres";
                   //     [System.Xml.Serialization.XmlElementAttribute("Genres", typeof(CollectionAlbumsAlbumGenres))]
                   CollectionAlbumsAlbumGenres ocdGenres = (CollectionAlbumsAlbumGenres)album.Items[i];
 
@@ -144,6 +156,7 @@ namespace OrangeCdToCollectorz
 
                   break;
                 case ItemsChoiceType2.FreeDBComment:
+                  lastPoprerty = "FreeDBComment";
                   comment += album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Credits:
@@ -159,9 +172,11 @@ namespace OrangeCdToCollectorz
                   // skipping 
                   break;
                 case ItemsChoiceType2.Comment:
+                  lastPoprerty = "Comment";
                   comment += album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Category:
+                  lastPoprerty = "Category";
 
                   if (genres.Genre == null)
                   {
@@ -171,16 +186,18 @@ namespace OrangeCdToCollectorz
                   genres.Genre.Displayname = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Format:
+                  lastPoprerty = "Format";
                   format = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.CatalogNo:
+                  lastPoprerty = "CatalogNo";
                   labelnumber = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.ASIN:
                   // skipping ASIN
                   break;
                 case ItemsChoiceType2.Artists:
-                  // read artists
+                  lastPoprerty = "Artists";
                   collectionAlbumsAlbumArtists = (CollectionAlbumsAlbumArtists)album.Items[i];
                   break;
                 default:
@@ -191,7 +208,7 @@ namespace OrangeCdToCollectorz
 
             if ((format == "CD") || (format == "CDR") || (format == "LP"))
             {
-              richTextBox1.Text += "Extracting from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+              richTextBox1.Text += cnt.ToString() + " Extracting album'" + title + "' from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
               CollectorzMusic.Music music = new CollectorzMusic.Music();
 
               // Title 
@@ -282,7 +299,7 @@ namespace OrangeCdToCollectorz
             }
             else
             {
-              richTextBox1.Text += "Skipping extracting album from OrangeCd.Collection with format " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+              richTextBox1.Text += cnt.ToString() + " Skipping extracting album '" + title + "' from OrangeCd.Collection with format " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
             }
           }
 
@@ -318,11 +335,17 @@ namespace OrangeCdToCollectorz
         }
         catch (Exception exception)
         {
-          richTextBox1.Text += exception.Message + Environment.NewLine;
+          richTextBox1.Text += exception.Message + " lastPoprerty: " + lastPoprerty + Environment.NewLine;
           ; // <-- For debugging use.
         }
       }
       // richTextBox1.Text = result.ToString(); // <-- For debugging use.
+    }
+
+    private void richTextBox1_TextChanged(object sender, EventArgs e)
+    {
+      richTextBox1.SelectionStart = richTextBox1.Text.Length; //Set the current caret position at the end
+      richTextBox1.ScrollToCaret(); //Now scroll it automatically
     }
   }
 }
