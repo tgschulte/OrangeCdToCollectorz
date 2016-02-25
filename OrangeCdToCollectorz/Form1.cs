@@ -60,18 +60,42 @@ namespace OrangeCdToCollectorz
             string format = string.Empty;
             string comment = string.Empty;
             string labelnumber = string.Empty;
-            string genre = string.Empty;
+            string label = string.Empty;
             CollectionAlbumsAlbumArtists collectionAlbumsAlbumArtists = new CollectionAlbumsAlbumArtists();
+            CollectorzMusic.Genres genres = new CollectorzMusic.Genres();
 
             for (int i = 0; i < album.Items.Length; i++)
             {
               switch (album.ItemsElementName[i])
               {
+                case ItemsChoiceType2.Label:
+                  label = album.Items[i].ToString();
+                  break;
+                case ItemsChoiceType2.Genres:
+                  //     [System.Xml.Serialization.XmlElementAttribute("Genres", typeof(CollectionAlbumsAlbumGenres))]
+                  CollectionAlbumsAlbumGenres ocdGenres = (CollectionAlbumsAlbumGenres)album.Items[i];
+                  genres.Genre.Displayname = ocdGenres.Genre[0];                  
+                  break;
+                case ItemsChoiceType2.FreeDBComment:
+                  comment += album.Items[i].ToString();
+                  break;
+                case ItemsChoiceType2.Credits:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Country:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Composers:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Company:
+                  // skipping 
+                  break;
                 case ItemsChoiceType2.Comment:
-                  comment = album.Items[i].ToString();
+                  comment += album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Category:
-                  genre = album.Items[i].ToString();
+                  genres.Genre.Displayname = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Format:
                   format = album.Items[i].ToString();
@@ -97,18 +121,16 @@ namespace OrangeCdToCollectorz
                 richTextBox1.Text += "Extracting from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
                 CollectorzMusic.Music music = new CollectorzMusic.Music();
 
-                // todo: Notes
-                //music.Details = new CollectorzMusic.Details();
-                //music.Details.Detail = new List<CollectorzMusic.Detail>();
-                //CollectorzMusic.Detail detail = new CollectorzMusic.Detail();
-                //detail.
-                //music.Details.Detail.Add();
-                //comment;
+                // label
+                music.Label = new CollectorzMusic.Label();
+                music.Label.Displayname = label;
+                music.Label.Sortname = label;
+
+                // Notes
+                music.Notes = comment;
 
                 // genre
-                music.Genres = new CollectorzMusic.Genres();
-                music.Genres.Genre = new CollectorzMusic.Genre();
-                music.Genres.Genre.Displayname = genre;
+                music.Genres = genres;
 
                 // cat. no.
                 music.Labelnumber = labelnumber;

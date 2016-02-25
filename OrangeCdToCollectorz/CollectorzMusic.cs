@@ -297,6 +297,8 @@ namespace OrangeCdToCollectorz
       public string Length { get; set; }
       [XmlElement(ElementName = "lengthsecs")]
       public string Lengthsecs { get; set; }
+      [XmlElement(ElementName = "notes")]
+      public string Notes { get; set; }
       [XmlElement(ElementName = "nrtracks")]
       public string Nrtracks { get; set; }
       [XmlElement(ElementName = "cddbgenreid1")]
