@@ -60,7 +60,10 @@ namespace OrangeCdToCollectorz
             string format = string.Empty;
             string comment = string.Empty;
             string labelnumber = string.Empty;
+            string location = string.Empty;
             string label = string.Empty;
+            string releaseDateStr = string.Empty;
+            int releaseYear = 0; ;
             CollectionAlbumsAlbumArtists collectionAlbumsAlbumArtists = new CollectionAlbumsAlbumArtists();
             CollectorzMusic.Genres genres = new CollectorzMusic.Genres();
 
@@ -68,13 +71,57 @@ namespace OrangeCdToCollectorz
             {
               switch (album.ItemsElementName[i])
               {
+                case ItemsChoiceType2.ReleaseDate:
+                  CollectionAlbumsAlbumReleaseDate collectionAlbumsAlbumReleaseDate = (CollectionAlbumsAlbumReleaseDate)album.Items[i];
+                  releaseDateStr = collectionAlbumsAlbumReleaseDate.Value;
+
+                  if (int.TryParse(collectionAlbumsAlbumReleaseDate.Value, out releaseYear) == false)
+                  {
+                    DateTime releaseDate;
+                    if (DateTime.TryParse(collectionAlbumsAlbumReleaseDate.Value, out releaseDate))
+                    {
+                      releaseYear = releaseDate.Year;
+                    }
+                  }
+                  break;
+                case ItemsChoiceType2.ReissueDate:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.RefNo:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Production:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Path:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Musicians:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.ReissueLabel:
+                  // skipping 
+                  break;
+                case ItemsChoiceType2.Location:
+                  location = album.Items[i].ToString();
+                  break;
                 case ItemsChoiceType2.Label:
                   label = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Genres:
                   //     [System.Xml.Serialization.XmlElementAttribute("Genres", typeof(CollectionAlbumsAlbumGenres))]
                   CollectionAlbumsAlbumGenres ocdGenres = (CollectionAlbumsAlbumGenres)album.Items[i];
-                  genres.Genre.Displayname = ocdGenres.Genre[0];                  
+
+                  if (ocdGenres.Genre != null)
+                  {
+                    if (genres.Genre == null)
+                    {
+                      genres.Genre = new CollectorzMusic.Genre();
+                    }
+
+                    genres.Genre.Displayname = ocdGenres.Genre[0];
+                  }
+
                   break;
                 case ItemsChoiceType2.FreeDBComment:
                   comment += album.Items[i].ToString();
@@ -95,12 +142,18 @@ namespace OrangeCdToCollectorz
                   comment += album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Category:
+
+                  if (genres.Genre == null)
+                  {
+                    genres.Genre = new CollectorzMusic.Genre();
+                  }
+
                   genres.Genre.Displayname = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.Format:
                   format = album.Items[i].ToString();
                   break;
-               case ItemsChoiceType2.CatalogNo:
+                case ItemsChoiceType2.CatalogNo:
                   labelnumber = album.Items[i].ToString();
                   break;
                 case ItemsChoiceType2.ASIN:
@@ -111,77 +164,101 @@ namespace OrangeCdToCollectorz
                   collectionAlbumsAlbumArtists = (CollectionAlbumsAlbumArtists)album.Items[i];
                   break;
                 default:
-                  richTextBox1.Text += "Error Importing from OrangeCd.Collection album " + album.ID + Environment.NewLine;
+                  richTextBox1.Text += "Error extracting property '" + album.ItemsElementName[i] + "' from OrangeCd.Collection album " + album.ID + Environment.NewLine;
                   break;
               }
             }
 
             if ((format == "CD") || (format == "CDR") || (format == "LP"))
-              {
-                richTextBox1.Text += "Extracting from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
-                CollectorzMusic.Music music = new CollectorzMusic.Music();
+            {
+              richTextBox1.Text += "Extracting from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+              CollectorzMusic.Music music = new CollectorzMusic.Music();
 
-                // label
+              // release date
+              if (string.IsNullOrEmpty(releaseDateStr) == false)
+              {
+                music.Releasedate = new CollectorzMusic.Releasedate();
+                music.Releasedate.Date = releaseDateStr;
+
+                if (releaseYear > 0)
+                {
+                  music.Releasedate.Year = new CollectorzMusic.Year();
+                  music.Releasedate.Year.Displayname = releaseYear.ToString();
+                }
+              }
+
+              // Location 
+              if (location != string.Empty)
+              {
+                music.Location = new CollectorzMusic.Location();
+                music.Location.Displayname = location;
+                music.Location.Sortname = location;
+              }
+
+              // label
+              if (label != string.Empty)
+              {
                 music.Label = new CollectorzMusic.Label();
                 music.Label.Displayname = label;
                 music.Label.Sortname = label;
+              }
 
-                // Notes
-                music.Notes = comment;
+              // Notes
+              music.Notes = comment;
 
-                // genre
-                music.Genres = genres;
+              // genre
+              music.Genres = genres;
 
-                // cat. no.
-                music.Labelnumber = labelnumber;
+              // cat. no.
+              music.Labelnumber = labelnumber;
 
-                // format
-                CollectorzMusic.Format collectorzMusicFormat = new CollectorzMusic.Format();
-                collectorzMusicFormat.Displayname = format;
-                music.Format = collectorzMusicFormat;
+              // format
+              CollectorzMusic.Format collectorzMusicFormat = new CollectorzMusic.Format();
+              collectorzMusicFormat.Displayname = format;
+              music.Format = collectorzMusicFormat;
 
-                // artists
-                music.Artists = new CollectorzMusic.Artists();
-                if (collectionAlbumsAlbumArtists.Various == 1)
-                {
-                  CollectorzMusic.Artist  cArtist = new CollectorzMusic.Artist();
-                  cArtist.Displayname = "Various Artists";
-                  cArtist.Sortname = "Various Artists";
-                  music.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
-                  music.Artistfirstletter.Displayname = "Various Artists";
-                  music.Artistfirstletter.Sortname = "Various Artists";
-                  music.Artists.Artist = cArtist;
-                }
-                else
-                {
-                  // look up sort name, display name
-                  music.Artists.Artist = new CollectorzMusic.Artist();
-                  string sortname = collectionAlbumsAlbumArtists.Artist;
-                  music.Artists.Artist.Displayname = sortname;
-
-                  CollectionArtistsArtist collectionArtists = orangeCdCollection.Artists.Artist.FirstOrDefault(a => a.Name == sortname);
-
-                  if (collectionArtists != null)
-                  {
-                    if (collectionArtists.SortName!=null)
-                    {
-                      sortname = collectionArtists.SortName;
-                    }
-                  }
-
-                  music.Artists.Artist.Sortname = sortname;
-
-                  music.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
-                  music.Artistfirstletter.Displayname = music.Artists.Artist.Displayname;
-                  music.Artistfirstletter.Sortname = music.Artists.Artist.Sortname;
-                }
-
-                musiclist.Music.Add(music);
+              // artists
+              music.Artists = new CollectorzMusic.Artists();
+              if (collectionAlbumsAlbumArtists.Various == 1)
+              {
+                CollectorzMusic.Artist cArtist = new CollectorzMusic.Artist();
+                cArtist.Displayname = "Various Artists";
+                cArtist.Sortname = "Various Artists";
+                music.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
+                music.Artistfirstletter.Displayname = "Various Artists";
+                music.Artistfirstletter.Sortname = "Various Artists";
+                music.Artists.Artist = cArtist;
               }
               else
               {
-                richTextBox1.Text += "Skipping Importing from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+                // look up sort name, display name
+                music.Artists.Artist = new CollectorzMusic.Artist();
+                string sortname = collectionAlbumsAlbumArtists.Artist;
+                music.Artists.Artist.Displayname = sortname;
+
+                CollectionArtistsArtist collectionArtists = orangeCdCollection.Artists.Artist.FirstOrDefault(a => a.Name == sortname);
+
+                if (collectionArtists != null)
+                {
+                  if (collectionArtists.SortName != null)
+                  {
+                    sortname = collectionArtists.SortName;
+                  }
+                }
+
+                music.Artists.Artist.Sortname = sortname;
+
+                music.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
+                music.Artistfirstletter.Displayname = music.Artists.Artist.Displayname;
+                music.Artistfirstletter.Sortname = music.Artists.Artist.Sortname;
               }
+
+              musiclist.Music.Add(music);
+            }
+            else
+            {
+              richTextBox1.Text += "Skipping extracting album from OrangeCd.Collection with format " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
+            }
           }
 
           collectorzMusic.Musiclist = musiclist;
@@ -195,7 +272,7 @@ namespace OrangeCdToCollectorz
 
           writer.Serialize(fileStream, collectorzMusic);
           fileStream.Close();
-          richTextBox1.Text += "Output for important written to." + path;
+          richTextBox1.Text += "Output for importing written to." + path;
 
         }
         catch (XmlException xmlException)

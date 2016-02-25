@@ -115,6 +115,15 @@ namespace OrangeCdToCollectorz
       public string Sortname { get; set; }
     }
 
+    [XmlRoot(ElementName = "location")]
+    public class Location
+    {
+      [XmlElement(ElementName = "displayname")]
+      public string Displayname { get; set; }
+      [XmlElement(ElementName = "sortname")]
+      public string Sortname { get; set; }
+    }
+
     [XmlRoot(ElementName = "spars")]
     public class Spars
     {
@@ -311,6 +320,8 @@ namespace OrangeCdToCollectorz
       public Format Format { get; set; }
       [XmlElement(ElementName = "cddbgenreid2")]
       public string Cddbgenreid2 { get; set; }
+      [XmlElement(ElementName = "location")]
+      public Location Location { get; set; }
       [XmlElement(ElementName = "rating")]
       public Rating Rating { get; set; }
       [XmlElement(ElementName = "studios")]
