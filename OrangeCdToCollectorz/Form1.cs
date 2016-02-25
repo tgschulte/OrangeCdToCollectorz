@@ -61,6 +61,8 @@ namespace OrangeCdToCollectorz
             string comment = string.Empty;
             string labelnumber = string.Empty;
             string location = string.Empty;
+            string upc = string.Empty;
+            string title = string.Empty;
             string label = string.Empty;
             string releaseDateStr = string.Empty;
             int releaseYear = 0; ;
@@ -71,6 +73,24 @@ namespace OrangeCdToCollectorz
             {
               switch (album.ItemsElementName[i])
               {
+                case ItemsChoiceType2.Volumes:
+                // skipping 
+                case ItemsChoiceType2.Year:
+                  if (releaseYear == 0)
+                  {
+                    // format is ushort 
+                    releaseYear = (ushort)album.Items[i];
+                  }
+                  break;
+                case ItemsChoiceType2.UPC:
+                  upc = album.Items[i].ToString();
+                  break;
+                case ItemsChoiceType2.Title:
+                  title = album.Items[i].ToString();
+                  break;
+                case ItemsChoiceType2.Status:
+                  // skipping 
+                  break;
                 case ItemsChoiceType2.ReleaseDate:
                   CollectionAlbumsAlbumReleaseDate collectionAlbumsAlbumReleaseDate = (CollectionAlbumsAlbumReleaseDate)album.Items[i];
                   releaseDateStr = collectionAlbumsAlbumReleaseDate.Value;
@@ -174,6 +194,9 @@ namespace OrangeCdToCollectorz
               richTextBox1.Text += "Extracting from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
               CollectorzMusic.Music music = new CollectorzMusic.Music();
 
+              // Title 
+              music.Title = title;
+
               // release date
               if (string.IsNullOrEmpty(releaseDateStr) == false)
               {
@@ -186,6 +209,8 @@ namespace OrangeCdToCollectorz
                   music.Releasedate.Year.Displayname = releaseYear.ToString();
                 }
               }
+
+              music.Upc = upc;
 
               // Location 
               if (location != string.Empty)
