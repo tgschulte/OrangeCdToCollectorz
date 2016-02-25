@@ -32,6 +32,8 @@
       this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
       this.button1 = new System.Windows.Forms.Button();
       this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+      this.progressBar1 = new System.Windows.Forms.ProgressBar();
+      this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -61,11 +63,23 @@
       this.richTextBox1.Text = "";
       this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
       // 
+      // progressBar1
+      // 
+      this.progressBar1.Location = new System.Drawing.Point(251, 11);
+      this.progressBar1.Name = "progressBar1";
+      this.progressBar1.Size = new System.Drawing.Size(605, 23);
+      this.progressBar1.TabIndex = 2;
+      // 
+      // backgroundWorker1
+      // 
+      this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(868, 483);
+      this.Controls.Add(this.progressBar1);
       this.Controls.Add(this.richTextBox1);
       this.Controls.Add(this.button1);
       this.Name = "Form1";
@@ -80,6 +94,8 @@
     private System.Windows.Forms.OpenFileDialog openFileDialog2;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.RichTextBox richTextBox1;
+    private System.Windows.Forms.ProgressBar progressBar1;
+    private System.ComponentModel.BackgroundWorker backgroundWorker1;
   }
 }
 
