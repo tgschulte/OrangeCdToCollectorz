@@ -40,7 +40,7 @@ namespace OrangeCdToCollectorz
         backgroundWorker1.WorkerReportsProgress = true;
         backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
         backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_RunWorkerCompleted);
-    backgroundWorker1.RunWorkerAsync();
+        backgroundWorker1.RunWorkerAsync();
       }
       else
       {
@@ -103,8 +103,7 @@ namespace OrangeCdToCollectorz
         foreach (CollectionAlbumsAlbum album in orangeCdCollection.Albums.All)
         {
           cnt++;
-          //int progress = 100 * (int)((double)cnt / albumCnt);
-          double progress = cnt *100.0 / albumCnt;
+          double progress = cnt * 100.0 / albumCnt;
           backgroundWorker.ReportProgress((int)progress);
           string format = string.Empty;
           string comment = string.Empty;
@@ -113,6 +112,7 @@ namespace OrangeCdToCollectorz
           string upc = string.Empty;
           string title = string.Empty;
           string label = string.Empty;
+          CollectionAlbumsAlbumVolumes collectionAlbumsAlbumVolumes = new CollectionAlbumsAlbumVolumes();
           string releaseDateStr = string.Empty;
           int releaseYear = 0; ;
           CollectionAlbumsAlbumArtists collectionAlbumsAlbumArtists = new CollectionAlbumsAlbumArtists();
@@ -123,7 +123,10 @@ namespace OrangeCdToCollectorz
             switch (album.ItemsElementName[i])
             {
               case ItemsChoiceType2.Volumes:
-              // skipping 
+                this._lastPoprerty = "Volumes";
+                // [System.Xml.Serialization.XmlElementAttribute("Volumes", typeof(CollectionAlbumsAlbumVolumes))]
+                collectionAlbumsAlbumVolumes = (CollectionAlbumsAlbumVolumes)album.Items[i];
+                break;
               case ItemsChoiceType2.Year:
                 this._lastPoprerty = "Year";
                 if (releaseYear == 0)
@@ -341,6 +344,28 @@ namespace OrangeCdToCollectorz
               music.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
               music.Artistfirstletter.Displayname = music.Artists.Artist.Displayname;
               music.Artistfirstletter.Sortname = music.Artists.Artist.Sortname;
+            }
+
+            //skip album.Created
+            //skip album.CDDBID
+            //skip album.Frames
+            music.Hash = album.ID;
+
+            foreach (CollectionAlbumsAlbumVolumesVolume volume in collectionAlbumsAlbumVolumes.Volume)
+            {
+              // todo: handle multi-volume sets
+              music.Title = volume.Title;
+
+              music.Details = new CollectorzMusic.Details();
+                music.Details.Detail = new List<CollectorzMusic.Detail>();
+              foreach (CollectionAlbumsAlbumVolumesVolumeTracksTrack track in volume.Tracks.Track)
+              {
+                CollectorzMusic.Detail detail = new CollectorzMusic.Detail();
+                detail.Type = "track";
+                detail.Index = track.Number.ToString();
+                music.Details.Detail.Add(detail);
+                //music.Sounds.Sound.Displayname = track.Items[0].ToString();
+              }
             }
 
             musiclist.Music.Add(music);
