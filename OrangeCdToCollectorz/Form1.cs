@@ -357,14 +357,80 @@ namespace OrangeCdToCollectorz
               music.Title = volume.Title;
 
               music.Details = new CollectorzMusic.Details();
-                music.Details.Detail = new List<CollectorzMusic.Detail>();
+              music.Details.Detail = new List<CollectorzMusic.Detail>();
               foreach (CollectionAlbumsAlbumVolumesVolumeTracksTrack track in volume.Tracks.Track)
               {
                 CollectorzMusic.Detail detail = new CollectorzMusic.Detail();
                 detail.Type = "track";
                 detail.Index = track.Number.ToString();
+                detail.Length = track.Time;
                 music.Details.Detail.Add(detail);
-                //music.Sounds.Sound.Displayname = track.Items[0].ToString();
+
+                // track.Items
+                //                [System.Xml.Serialization.XmlElementAttribute("Artist", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("Comment", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("Composer", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("File", typeof(CollectionAlbumsAlbumVolumesVolumeTracksTrackFile))]
+                //[System.Xml.Serialization.XmlElementAttribute("FreeDBComment", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("Lyrics", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("RecDate", typeof(CollectionAlbumsAlbumVolumesVolumeTracksTrackRecDate))]
+                //[System.Xml.Serialization.XmlElementAttribute("RecVenue", typeof(string))]
+                //[System.Xml.Serialization.XmlElementAttribute("Title", typeof(string))]
+                //[System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+                for (int i = 0; i < track.Items.Length; i++)
+                {
+                  switch (track.ItemsElementName[i])
+                  {
+                    case ItemsChoiceType1.Artist:
+                      this._lastPoprerty = "Track-Artist";
+                      detail.Artists = new CollectorzMusic.Artists();
+                      detail.Artists.Artist = new CollectorzMusic.Artist();
+                      detail.Artists.Artist.Displayname = track.Items[i].ToString();
+                      detail.Artists.Artist.Sortname = track.Items[i].ToString();
+
+                      detail.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
+                      detail.Artistfirstletter.Displayname = track.Items[i].ToString().Substring(0, 1);
+                      detail.Artistfirstletter.Sortname = track.Items[i].ToString().Substring(0, 1);
+                      break;
+                    case ItemsChoiceType1.Comment:
+                      this._lastPoprerty = "Track-Comment";
+                      //skip Comment
+                      //todo: how to handle track comment
+                      break;
+                    case ItemsChoiceType1.Composer:
+                      this._lastPoprerty = "Track-Composer";
+                      detail.Composers = track.Items[i].ToString();
+                      break;
+                    case ItemsChoiceType1.File:
+                      this._lastPoprerty = "Track-File";
+                      //skip File
+                      break;
+                    case ItemsChoiceType1.FreeDBComment:
+                      this._lastPoprerty = "Track-FreeDBComment";
+                      //skip FreeDBComment
+                      //todo: how to handle track FreeDBComment
+                      break;
+                    case ItemsChoiceType1.Lyrics:
+                      this._lastPoprerty = "Track-Lyrics";
+                      //skip Lyrics
+                      //todo: how to handle track Lyrics
+                      break;
+                    case ItemsChoiceType1.RecDate:
+                      this._lastPoprerty = "Track-RecDate";
+                      detail.Recordingdate = track.Items[i].ToString();
+                      break;
+                    case ItemsChoiceType1.RecVenue:
+                      // skipping 
+                      break;
+                    case ItemsChoiceType1.Title:
+                      this._lastPoprerty = "Track-Title";
+                      detail.Title = track.Items[i].ToString();
+                      break;
+                    default:
+                      this.SetText(this.richTextBox1, "Error extracting property '" + track.Items[i] + "' from OrangeCd.Collection album " + album.ID + Environment.NewLine);
+                      break;
+                  }
+                }
               }
             }
 
@@ -373,11 +439,8 @@ namespace OrangeCdToCollectorz
           else
           {
             this.SetText(this.richTextBox1, cnt.ToString() + " Skipping extracting album '" + title + "' from OrangeCd.Collection with format " + format + Environment.NewLine);
-
-            //richTextBox1.Text += cnt.ToString() + " Skipping extracting album '" + title + "' from OrangeCd.Collection with format " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
           }
         }
-
 
         collectorzMusic.Musiclist = musiclist;
 
