@@ -454,7 +454,6 @@ namespace OrangeCdToCollectorz
                 detailTrack.Lengthsecs = lengthsecs.ToString();
                 volumeLengthSecs += lengthsecs;
                 volumeNrTracks++;
-                music.Details.Detail.Add(detailTrack);
 
                 // track.Items
                 //                [System.Xml.Serialization.XmlElementAttribute("Artist", typeof(string))]
