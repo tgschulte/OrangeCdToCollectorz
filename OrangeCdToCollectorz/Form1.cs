@@ -262,6 +262,12 @@ namespace OrangeCdToCollectorz
             //richTextBox1.Text += cnt.ToString() + " Extracting album'" + title + "' from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
             CollectorzMusic.Music music = new CollectorzMusic.Music();
 
+            // Skippings "Sounds" which is for stereo, mono, etc.
+            // music.Sounds
+
+            // todo set qty from OCD .Qualities...
+            // music.Quantity = album.
+
             // Title 
             music.Title = title;
 
@@ -351,20 +357,104 @@ namespace OrangeCdToCollectorz
             //skip album.Frames
             music.Hash = album.ID;
 
+            music.Details = new CollectorzMusic.Details();
+            int volumes = 0;
+            int musicNrtracks = 0;
+            int musicLengthSecs = 0;
+            music.Lengthsecs = "0";
+            // music.Length ###:##
+            music.Nrdiscs = "0";
+            music.Details.Detail = new List<CollectorzMusic.Detail>();
+
             foreach (CollectionAlbumsAlbumVolumesVolume volume in collectionAlbumsAlbumVolumes.Volume)
             {
-              // todo: handle multi-volume sets
-              music.Title = volume.Title;
+              CollectorzMusic.Detail collectorzVolume = new CollectorzMusic.Detail();
+              collectorzVolume.Type = "disc";
+              collectorzVolume.Index = volumes++.ToString();
+              collectorzVolume.Title = volume.Title;
+              collectorzVolume.Releasedate = music.Releasedate;
+              collectorzVolume.Artists = music.Artists;
+              collectorzVolume.Artistfirstletter = music.Artistfirstletter;
+              //collectorzVolume.Labelnumber;
 
-              music.Details = new CollectorzMusic.Details();
-              music.Details.Detail = new List<CollectorzMusic.Detail>();
+              int volumeLengthSecs = 0;
+              int volumeNrTracks = 0;
+              // todo: test multi-volume sets
+              collectorzVolume.Details = new CollectorzMusic.Details();
+              collectorzVolume.Details.Detail = new List<CollectorzMusic.Detail>();
+
               foreach (CollectionAlbumsAlbumVolumesVolumeTracksTrack track in volume.Tracks.Track)
               {
-                CollectorzMusic.Detail detail = new CollectorzMusic.Detail();
-                detail.Type = "track";
-                detail.Index = track.Number.ToString();
-                detail.Length = track.Time;
-                music.Details.Detail.Add(detail);
+                /*
+                 *               <id>241</id>
+                              <index>2</index>
+                              <live boolvalue="0">No</live>
+
+                              <rating>0</rating>
+                              <bpm>0</bpm>
+                              <position>02</position>
+
+                 */
+
+                CollectorzMusic.Detail detailTrack = new CollectorzMusic.Detail();
+                detailTrack.Type = "track";
+                detailTrack.Nrtracks = "1";
+
+                detailTrack.Releasedate = music.Releasedate;
+                detailTrack.Genres = music.Genres;
+                detailTrack.Label = music.Label;
+                detailTrack.Labelnumber = music.Labelnumber;
+                detailTrack.Cddbgenreid1 = "0";
+                detailTrack.Cddbgenreid2 = "0";
+                detailTrack.Rating = new CollectorzMusic.Rating();
+                detailTrack.Rating.Displayname = "0";
+                detailTrack.Rating.Sortname = "0";
+                detailTrack.Bitrate = "0";
+                detailTrack.Filesize = "0";
+                detailTrack.Offset = "0";
+
+
+                detailTrack.Index = track.Number.ToString();
+
+                if (track.Number < 10)
+                {
+                  detailTrack.Position = "0" + track.Number.ToString();
+                }
+                else
+                {
+                  detailTrack.Position = detailTrack.Index;
+                }
+
+                detailTrack.Length = track.Time.PadLeft(5, '0');
+                string[] timeParts = detailTrack.Length.Split(':');
+                Array.Reverse(timeParts);
+
+                int lengthsecs = 0;
+                for (int i = 0; i < timeParts.Length; i++)
+                {
+                  int parsedtime = int.Parse(timeParts[i]);
+                  int secondsPerUnitOfTime = (int)Math.Pow(60.0, (double)i);
+
+                  lengthsecs += parsedtime * secondsPerUnitOfTime;
+                  //foreach (string timePart in timeParts)
+                  //switch (i)
+                  //{
+                  //case 0:
+                  //    lengthsecs = int.Parse(timeParts[0]);
+                  //    break;
+                  //case 1:
+                  //    lengthsecs += 60 * int.Parse(timeParts[1]);
+                  //    break;
+                  //case 2:
+                  //    lengthsecs += 60 * 60 * int.Parse(timeParts[1]);
+                  //    break;
+                  //}
+
+                }
+                detailTrack.Lengthsecs = lengthsecs.ToString();
+                volumeLengthSecs += lengthsecs;
+                volumeNrTracks++;
+                music.Details.Detail.Add(detailTrack);
 
                 // track.Items
                 //                [System.Xml.Serialization.XmlElementAttribute("Artist", typeof(string))]
@@ -383,14 +473,14 @@ namespace OrangeCdToCollectorz
                   {
                     case ItemsChoiceType1.Artist:
                       this._lastPoprerty = "Track-Artist";
-                      detail.Artists = new CollectorzMusic.Artists();
-                      detail.Artists.Artist = new CollectorzMusic.Artist();
-                      detail.Artists.Artist.Displayname = track.Items[i].ToString();
-                      detail.Artists.Artist.Sortname = track.Items[i].ToString();
+                      detailTrack.Artists = new CollectorzMusic.Artists();
+                      detailTrack.Artists.Artist = new CollectorzMusic.Artist();
+                      detailTrack.Artists.Artist.Displayname = track.Items[i].ToString();
+                      detailTrack.Artists.Artist.Sortname = track.Items[i].ToString();
 
-                      detail.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
-                      detail.Artistfirstletter.Displayname = track.Items[i].ToString().Substring(0, 1);
-                      detail.Artistfirstletter.Sortname = track.Items[i].ToString().Substring(0, 1);
+                      detailTrack.Artistfirstletter = new CollectorzMusic.Artistfirstletter();
+                      detailTrack.Artistfirstletter.Displayname = track.Items[i].ToString().Substring(0, 1);
+                      detailTrack.Artistfirstletter.Sortname = track.Items[i].ToString().Substring(0, 1);
                       break;
                     case ItemsChoiceType1.Comment:
                       this._lastPoprerty = "Track-Comment";
@@ -399,7 +489,7 @@ namespace OrangeCdToCollectorz
                       break;
                     case ItemsChoiceType1.Composer:
                       this._lastPoprerty = "Track-Composer";
-                      detail.Composers = track.Items[i].ToString();
+                      detailTrack.Composers = track.Items[i].ToString();
                       break;
                     case ItemsChoiceType1.File:
                       this._lastPoprerty = "Track-File";
@@ -417,22 +507,37 @@ namespace OrangeCdToCollectorz
                       break;
                     case ItemsChoiceType1.RecDate:
                       this._lastPoprerty = "Track-RecDate";
-                      detail.Recordingdate = track.Items[i].ToString();
+                      detailTrack.Recordingdate = track.Items[i].ToString();
                       break;
                     case ItemsChoiceType1.RecVenue:
                       // skipping 
                       break;
                     case ItemsChoiceType1.Title:
                       this._lastPoprerty = "Track-Title";
-                      detail.Title = track.Items[i].ToString();
+                      detailTrack.Title = track.Items[i].ToString();
                       break;
                     default:
                       this.SetText(this.richTextBox1, "Error extracting property '" + track.Items[i] + "' from OrangeCd.Collection album " + album.ID + Environment.NewLine);
                       break;
                   }
                 }
+
+                collectorzVolume.Details.Detail.Add(detailTrack);
               }
+              collectorzVolume.Nrtracks = volumeNrTracks.ToString();
+              collectorzVolume.Lengthsecs = volumeLengthSecs.ToString();
+              collectorzVolume.Length = LengthFormatted(volumeLengthSecs);
+
+              musicLengthSecs += volumeLengthSecs;
+              musicNrtracks += int.Parse(collectorzVolume.Nrtracks);
+              music.Details.Detail.Add(collectorzVolume);
             }
+
+            music.Nrtracks = musicNrtracks.ToString();
+            music.Lengthsecs = musicLengthSecs.ToString();
+            music.Length = LengthFormatted(musicLengthSecs);
+            music.Nrdiscs = volumes.ToString();
+
 
             musiclist.Music.Add(music);
           }
@@ -472,6 +577,28 @@ namespace OrangeCdToCollectorz
         //richTextBox1.Text += exception.Message + " lastPoprerty: " + this._lastPoprerty + Environment.NewLine;
         ; // <-- For debugging use.
       }
+    }
+
+    private string LengthFormatted(int musicLengthsecs)
+    {
+      int seconds = musicLengthsecs % 60;
+      int minutes = musicLengthsecs / 60;
+
+      string strSeconds = seconds.ToString();
+      string strMInutes = minutes.ToString();
+
+      if (seconds < 10)
+      {
+        strSeconds = "0" + strSeconds;
+      }
+
+      if (minutes < 10)
+      {
+        strMInutes = "0" + strMInutes;
+      }
+
+      string time = strSeconds + ":" + strMInutes;
+      return time;
     }
 
     private void richTextBox1_TextChanged(object sender, EventArgs e)
