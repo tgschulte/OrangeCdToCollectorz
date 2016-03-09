@@ -257,7 +257,7 @@ namespace OrangeCdToCollectorz
 
           if ((format == "CD") || (format == "CDR") || (format == "LP"))
           {
-            this.SetText(this.richTextBox1, cnt.ToString() + " Extracting album'" + title + "' from OrangeCd.Collection " + format + Environment.NewLine);
+            this.SetText(this.richTextBox1, cnt.ToString() + " Extracting album'" + title + "' [ID: " + album.ID  +"] from OrangeCd.Collection " + format + Environment.NewLine);
 
             //richTextBox1.Text += cnt.ToString() + " Extracting album'" + title + "' from OrangeCd.Collection " + format + Environment.NewLine; // + " " + album.Title + Environment.NewLine;
             CollectorzMusic.Music music = new CollectorzMusic.Music();
@@ -425,34 +425,24 @@ namespace OrangeCdToCollectorz
                   detailTrack.Position = detailTrack.Index;
                 }
 
-                detailTrack.Length = track.Time.PadLeft(5, '0');
-                string[] timeParts = detailTrack.Length.Split(':');
-                Array.Reverse(timeParts);
-
-                int lengthsecs = 0;
-                for (int i = 0; i < timeParts.Length; i++)
+                if (track.Time != null)
                 {
-                  int parsedtime = int.Parse(timeParts[i]);
-                  int secondsPerUnitOfTime = (int)Math.Pow(60.0, (double)i);
+                  detailTrack.Length = track.Time.PadLeft(5, '0');
+                  string[] timeParts = detailTrack.Length.Split(':');
+                  Array.Reverse(timeParts);
 
-                  lengthsecs += parsedtime * secondsPerUnitOfTime;
-                  //foreach (string timePart in timeParts)
-                  //switch (i)
-                  //{
-                  //case 0:
-                  //    lengthsecs = int.Parse(timeParts[0]);
-                  //    break;
-                  //case 1:
-                  //    lengthsecs += 60 * int.Parse(timeParts[1]);
-                  //    break;
-                  //case 2:
-                  //    lengthsecs += 60 * 60 * int.Parse(timeParts[1]);
-                  //    break;
-                  //}
+                  int lengthsecs = 0;
+                  for (int i = 0; i < timeParts.Length; i++)
+                  {
+                    int parsedtime = int.Parse(timeParts[i]);
+                    int secondsPerUnitOfTime = (int)Math.Pow(60.0, (double)i);
 
+                    lengthsecs += parsedtime * secondsPerUnitOfTime;
+                  }
+                  detailTrack.Lengthsecs = lengthsecs.ToString();
+                  volumeLengthSecs += lengthsecs;
                 }
-                detailTrack.Lengthsecs = lengthsecs.ToString();
-                volumeLengthSecs += lengthsecs;
+
                 volumeNrTracks++;
 
                 // track.Items

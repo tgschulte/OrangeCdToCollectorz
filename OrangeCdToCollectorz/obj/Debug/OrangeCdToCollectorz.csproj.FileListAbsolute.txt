@@ -15,3 +15,4 @@ C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\Oran
 C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.csproj.GenerateResource.Cache
 C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.exe
 C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.pdb
+C:\Users\tsch\Documents\OrangeCdToCollectorz\OrangeCdToCollectorz\obj\Debug\OrangeCdToCollectorz.csprojResolveAssemblyReference.cache
