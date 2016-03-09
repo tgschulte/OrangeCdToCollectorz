@@ -445,6 +445,8 @@ namespace OrangeCdToCollectorz
 
                 volumeNrTracks++;
 
+                if(track.Items != null)
+                {
                 // track.Items
                 //                [System.Xml.Serialization.XmlElementAttribute("Artist", typeof(string))]
                 //[System.Xml.Serialization.XmlElementAttribute("Comment", typeof(string))]
@@ -510,8 +512,9 @@ namespace OrangeCdToCollectorz
                       break;
                   }
                 }
+              }
 
-                collectorzVolume.Details.Detail.Add(detailTrack);
+              collectorzVolume.Details.Detail.Add(detailTrack);
               }
               collectorzVolume.Nrtracks = volumeNrTracks.ToString();
               collectorzVolume.Lengthsecs = volumeLengthSecs.ToString();
