@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("OrangeCdToCollectorz")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Plex Systems")]
+[assembly: AssemblyCompany("Tom Schulte")]
 [assembly: AssemblyProduct("OrangeCdToCollectorz")]
-[assembly: AssemblyCopyright("Copyright © Plex Systems 2016")]
+[assembly: AssemblyCopyright("Copyright © Tom Schulte 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
